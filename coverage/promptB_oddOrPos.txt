@@ -1,0 +1,197 @@
+▶ oddOrPos
+  ▶ input validation
+    ✔ throws TypeError when x is undefined (1.025917ms)
+    ✔ throws TypeError when x is null (0.570141ms)
+    ✔ throws TypeError when x is a number (0.147413ms)
+    ✔ throws TypeError when x is a string (0.200632ms)
+    ✔ throws TypeError when x is a plain object (0.240118ms)
+    ✔ throws TypeError when called with no arguments (0.15507ms)
+  ✔ input validation (3.58031ms)
+  ▶ basic counting
+    ✔ returns 0 for an empty array (0.258829ms)
+    ✔ returns a number (0.297423ms)
+    ✔ counts positive odd numbers (0.172057ms)
+    ✔ counts positive even numbers (positive) (0.930799ms)
+    ✖ counts negative odd numbers (odd) (2.744995ms)
+    ✔ does not count negative even numbers (0.322796ms)
+    ✔ does not count zero (neither odd nor positive) (0.251604ms)
+    ✔ does not count negative zero (0.167757ms)
+  ✖ basic counting (7.311407ms)
+  ▶ single element arrays
+    ✔ [1] -> 1 (0.24721ms)
+    ✔ [2] -> 1 (0.191101ms)
+    ✖ [-1] -> 1 (0.285445ms)
+    ✔ [-2] -> 0 (0.166842ms)
+  ✖ single element arrays (1.210972ms)
+  ▶ mixed arrays
+    ✖ counts each qualifying element exactly once (0.657456ms)
+    ✔ elements that are both odd and positive are not double counted (0.20678ms)
+    ✖ counts duplicates individually (0.377821ms)
+    ✔ handles an array with only non-qualifying elements (0.168403ms)
+    ✖ handles large magnitude values (0.207848ms)
+    ✖ handles long arrays (0.308005ms)
+  ✖ mixed arrays (2.253564ms)
+  ▶ non-integer and special numbers
+    ✔ counts positive non-integers (positive) (0.250783ms)
+    ✔ does not count negative non-integers (not odd, not positive) (0.162203ms)
+    ✔ counts Infinity (positive) (0.204399ms)
+    ✔ does not count -Infinity (0.159525ms)
+    ✔ does not count NaN (0.144601ms)
+  ✔ non-integer and special numbers (1.210742ms)
+  ▶ side effects
+    ✔ does not modify the input array (2.703161ms)
+    ✔ returns the same result on repeated calls (0.538875ms)
+  ✔ side effects (3.869419ms)
+✖ oddOrPos (20.313644ms)
+ℹ tests 31
+ℹ suites 7
+ℹ pass 25
+ℹ fail 6
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 214.423653
+ℹ start of coverage report
+ℹ ----------------------------------------------------------------------------
+ℹ file                      | line % | branch % | funcs % | uncovered lines
+ℹ ----------------------------------------------------------------------------
+ℹ hw1.js                    |  60.22 |   100.00 |   25.00 | 11-24 36-46 57-68
+ℹ test                      |        |          |         | 
+ℹ  promptB_oddOrPos.test.js | 100.00 |   100.00 |  100.00 | 
+ℹ ----------------------------------------------------------------------------
+ℹ all files                 |  84.19 |   100.00 |   93.75 | 
+ℹ ----------------------------------------------------------------------------
+ℹ end of coverage report
+
+✖ failing tests:
+
+test at test/promptB_oddOrPos.test.js:49:5
+✖ counts negative odd numbers (odd) (2.744995ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:
+  
+  0 !== 3
+  
+      at TestContext.<anonymous> (/mnt/c/Users/user.DESKTOP-7QU46KG/Desktop/NYCU/Courses/Fall 2026/Software Testing/Homework/test/promptB_oddOrPos.test.js:50:14)
+      at Test.runInAsyncScope (node:async_hooks:214:14)
+      at Test.run (node:internal/test_runner/test:1047:25)
+      at Suite.processPendingSubtests (node:internal/test_runner/test:744:18)
+      at Test.postRun (node:internal/test_runner/test:1173:19)
+      at Test.run (node:internal/test_runner/test:1101:12)
+      at async Suite.processPendingSubtests (node:internal/test_runner/test:744:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: 0,
+    expected: 3,
+    operator: 'strictEqual',
+    diff: 'simple'
+  }
+
+test at test/promptB_oddOrPos.test.js:69:5
+✖ [-1] -> 1 (0.285445ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:
+  
+  0 !== 1
+  
+      at TestContext.<anonymous> (/mnt/c/Users/user.DESKTOP-7QU46KG/Desktop/NYCU/Courses/Fall 2026/Software Testing/Homework/test/promptB_oddOrPos.test.js:69:36)
+      at Test.runInAsyncScope (node:async_hooks:214:14)
+      at Test.run (node:internal/test_runner/test:1047:25)
+      at Suite.processPendingSubtests (node:internal/test_runner/test:744:18)
+      at Test.postRun (node:internal/test_runner/test:1173:19)
+      at Test.run (node:internal/test_runner/test:1101:12)
+      at async Suite.processPendingSubtests (node:internal/test_runner/test:744:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: 0,
+    expected: 1,
+    operator: 'strictEqual',
+    diff: 'simple'
+  }
+
+test at test/promptB_oddOrPos.test.js:74:5
+✖ counts each qualifying element exactly once (0.657456ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:
+  
+  2 !== 3
+  
+      at TestContext.<anonymous> (/mnt/c/Users/user.DESKTOP-7QU46KG/Desktop/NYCU/Courses/Fall 2026/Software Testing/Homework/test/promptB_oddOrPos.test.js:76:14)
+      at Test.runInAsyncScope (node:async_hooks:214:14)
+      at Test.run (node:internal/test_runner/test:1047:25)
+      at Test.start (node:internal/test_runner/test:944:17)
+      at node:internal/test_runner/test:1440:71
+      at node:internal/per_context/primordials:466:82
+      at new Promise (<anonymous>)
+      at new SafePromise (node:internal/per_context/primordials:435:3)
+      at node:internal/per_context/primordials:466:9
+      at Array.map (<anonymous>) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: 2,
+    expected: 3,
+    operator: 'strictEqual',
+    diff: 'simple'
+  }
+
+test at test/promptB_oddOrPos.test.js:83:5
+✖ counts duplicates individually (0.377821ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:
+  
+  2 !== 4
+  
+      at TestContext.<anonymous> (/mnt/c/Users/user.DESKTOP-7QU46KG/Desktop/NYCU/Courses/Fall 2026/Software Testing/Homework/test/promptB_oddOrPos.test.js:84:14)
+      at Test.runInAsyncScope (node:async_hooks:214:14)
+      at Test.run (node:internal/test_runner/test:1047:25)
+      at Suite.processPendingSubtests (node:internal/test_runner/test:744:18)
+      at Test.postRun (node:internal/test_runner/test:1173:19)
+      at Test.run (node:internal/test_runner/test:1101:12)
+      at async Suite.processPendingSubtests (node:internal/test_runner/test:744:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: 2,
+    expected: 4,
+    operator: 'strictEqual',
+    diff: 'simple'
+  }
+
+test at test/promptB_oddOrPos.test.js:91:5
+✖ handles large magnitude values (0.207848ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:
+  
+  1 !== 2
+  
+      at TestContext.<anonymous> (/mnt/c/Users/user.DESKTOP-7QU46KG/Desktop/NYCU/Courses/Fall 2026/Software Testing/Homework/test/promptB_oddOrPos.test.js:92:14)
+      at Test.runInAsyncScope (node:async_hooks:214:14)
+      at Test.run (node:internal/test_runner/test:1047:25)
+      at Suite.processPendingSubtests (node:internal/test_runner/test:744:18)
+      at Test.postRun (node:internal/test_runner/test:1173:19)
+      at Test.run (node:internal/test_runner/test:1101:12)
+      at async Suite.processPendingSubtests (node:internal/test_runner/test:744:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: 1,
+    expected: 2,
+    operator: 'strictEqual',
+    diff: 'simple'
+  }
+
+test at test/promptB_oddOrPos.test.js:98:5
+✖ handles long arrays (0.308005ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:
+  
+  500 !== 750
+  
+      at TestContext.<anonymous> (/mnt/c/Users/user.DESKTOP-7QU46KG/Desktop/NYCU/Courses/Fall 2026/Software Testing/Homework/test/promptB_oddOrPos.test.js:102:14)
+      at Test.runInAsyncScope (node:async_hooks:214:14)
+      at Test.run (node:internal/test_runner/test:1047:25)
+      at Suite.processPendingSubtests (node:internal/test_runner/test:744:18)
+      at Test.postRun (node:internal/test_runner/test:1173:19)
+      at Test.run (node:internal/test_runner/test:1101:12)
+      at async Suite.processPendingSubtests (node:internal/test_runner/test:744:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: 500,
+    expected: 750,
+    operator: 'strictEqual',
+    diff: 'simple'
+  }
+(node:170598) MaxListenersExceededWarning: Possible EventEmitter memory leak detected. 11 end listeners added to [TestsStream]. MaxListeners is 10. Use emitter.setMaxListeners() to increase limit
+(Use `node --trace-warnings ...` to show where the warning was created)

@@ -1,0 +1,123 @@
+▶ findLast
+  ▶ returns the last index of y in x
+    ✔ finds a value that occurs once (1.651441ms)
+    ✔ returns the last index when the value occurs multiple times (0.149069ms)
+    ✔ returns the last index when every element matches (0.154955ms)
+    ✖ finds a value at index 0 (0.744368ms)
+    ✔ finds a value at the final index (0.118024ms)
+    ✖ finds the value in a single-element array (0.128123ms)
+    ✔ finds the last occurrence when it is at the final index (0.12838ms)
+    ✔ handles negative numbers (0.09977ms)
+    ✔ handles floating-point numbers (0.095188ms)
+    ✔ handles zero (0.096431ms)
+    ✔ handles Infinity and -Infinity (1.064337ms)
+    ✔ finds a number in an array containing non-number elements (0.096781ms)
+    ✔ works on a large array (1.042008ms)
+  ✖ returns the last index of y in x (6.799435ms)
+  ▶ returns -1 when y is absent
+    ✔ returns -1 for an empty array (0.250205ms)
+    ✔ returns -1 when the value is not in the array (0.240225ms)
+    ✔ returns -1 for a single-element array without the value (0.109293ms)
+    ✔ does not match a string that looks like the number (0.087997ms)
+    ✔ does not match other loosely-equal values (0.086117ms)
+    ✔ does not match a nearby floating-point value (0.075269ms)
+  ✔ returns -1 when y is absent (1.053945ms)
+  ▶ does not modify its input
+    ✔ leaves the array unchanged (0.778002ms)
+  ✔ does not modify its input (0.835304ms)
+  ▶ throws TypeError if x is not an array
+    ✔ throws when x is undefined (0.357752ms)
+    ✔ throws when x is null (0.061842ms)
+    ✔ throws when x is a number (0.053922ms)
+    ✔ throws when x is a string (0.036952ms)
+    ✔ throws when x is a boolean (0.045303ms)
+    ✔ throws when x is a plain object (0.033798ms)
+    ✔ throws when x is a function (0.030778ms)
+    ✔ throws when x is a Set (0.030654ms)
+    ✔ throws when x is a symbol (0.030942ms)
+    ✔ throws when x is a bigint (0.037044ms)
+    ✔ throws when called with no arguments (0.072844ms)
+  ✔ throws TypeError if x is not an array (0.98165ms)
+  ▶ throws TypeError if y is not a number
+    ✔ throws when y is undefined (0.131841ms)
+    ✔ throws when y is null (0.03426ms)
+    ✔ throws when y is a numeric string (1.128415ms)
+    ✔ throws when y is a boolean (0.082254ms)
+    ✔ throws when y is an object (0.055874ms)
+    ✔ throws when y is an array (0.049474ms)
+    ✔ throws when y is a bigint (0.047255ms)
+    ✔ throws when y is a symbol (0.044615ms)
+    ✔ throws when y is a function (0.043105ms)
+    ✔ throws when y is not a number even if x is empty (0.110843ms)
+    ✔ throws when y is omitted (0.073081ms)
+    ✔ does not throw when y is NaN, since NaN is a number (0.227441ms)
+  ✔ throws TypeError if y is not a number (2.295294ms)
+  ▶ throws TypeError when both arguments are invalid
+    ✔ throws when x is not an array and y is not a number (0.187931ms)
+  ✔ throws TypeError when both arguments are invalid (0.252691ms)
+✖ findLast (13.087176ms)
+ℹ tests 44
+ℹ suites 7
+ℹ pass 42
+ℹ fail 2
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 139.821476
+ℹ start of coverage report
+ℹ ----------------------------------------------------------------------------
+ℹ file                      | line % | branch % | funcs % | uncovered lines
+ℹ ----------------------------------------------------------------------------
+ℹ hw1.js                    |  62.37 |   100.00 |   25.00 | 36-46 57-68 79-90
+ℹ test                      |        |          |         | 
+ℹ  promptB_findLast.test.js | 100.00 |   100.00 |   95.45 | 
+ℹ ----------------------------------------------------------------------------
+ℹ all files                 |  86.22 |   100.00 |   89.58 | 
+ℹ ----------------------------------------------------------------------------
+ℹ end of coverage report
+
+✖ failing tests:
+
+test at test/promptB_findLast.test.js:20:5
+✖ finds a value at index 0 (0.744368ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:
+  
+  -1 !== 0
+  
+      at TestContext.<anonymous> (/mnt/c/Users/user.DESKTOP-7QU46KG/Desktop/NYCU/Courses/Fall 2026/Software Testing/Homework/test/promptB_findLast.test.js:21:14)
+      at Test.runInAsyncScope (node:async_hooks:214:14)
+      at Test.run (node:internal/test_runner/test:1047:25)
+      at Suite.processPendingSubtests (node:internal/test_runner/test:744:18)
+      at Test.postRun (node:internal/test_runner/test:1173:19)
+      at Test.run (node:internal/test_runner/test:1101:12)
+      at async Suite.processPendingSubtests (node:internal/test_runner/test:744:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: -1,
+    expected: 0,
+    operator: 'strictEqual',
+    diff: 'simple'
+  }
+
+test at test/promptB_findLast.test.js:28:5
+✖ finds the value in a single-element array (0.128123ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:
+  
+  -1 !== 0
+  
+      at TestContext.<anonymous> (/mnt/c/Users/user.DESKTOP-7QU46KG/Desktop/NYCU/Courses/Fall 2026/Software Testing/Homework/test/promptB_findLast.test.js:29:14)
+      at Test.runInAsyncScope (node:async_hooks:214:14)
+      at Test.run (node:internal/test_runner/test:1047:25)
+      at Suite.processPendingSubtests (node:internal/test_runner/test:744:18)
+      at Test.postRun (node:internal/test_runner/test:1173:19)
+      at Test.run (node:internal/test_runner/test:1101:12)
+      at async Suite.processPendingSubtests (node:internal/test_runner/test:744:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: -1,
+    expected: 0,
+    operator: 'strictEqual',
+    diff: 'simple'
+  }
+(node:170496) MaxListenersExceededWarning: Possible EventEmitter memory leak detected. 11 end listeners added to [TestsStream]. MaxListeners is 10. Use emitter.setMaxListeners() to increase limit
+(Use `node --trace-warnings ...` to show where the warning was created)

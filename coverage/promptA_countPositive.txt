@@ -1,0 +1,49 @@
+▶ countPositive
+  ▶ input validation
+    ✔ throws TypeError for non-array inputs (1.769099ms)
+    ✔ throws TypeError when called with no arguments (0.121454ms)
+  ✔ input validation (2.561501ms)
+  ▶ counting
+    ✔ returns 0 for an empty array (0.213431ms)
+    ✔ counts all elements when every element is positive (0.077432ms)
+    ✔ returns 0 when every element is negative (0.075862ms)
+    ✔ counts only non-negative elements in a mixed array (0.065373ms)
+    ✔ counts zero as non-negative (current behavior) (0.067353ms)
+    ✔ counts negative zero, since -0 >= 0 (0.05559ms)
+    ✔ handles single-element arrays (0.053743ms)
+    ✔ handles fractional values near zero (0.055981ms)
+    ✔ handles Infinity and -Infinity (0.081579ms)
+    ✔ handles large magnitude numbers (0.088836ms)
+    ✔ does not count NaN (0.072598ms)
+    ✔ handles large arrays (2.651448ms)
+    ✔ does not mutate the input array (0.765568ms)
+  ✔ counting (4.671277ms)
+  ▶ non-number elements (JS comparison coercion)
+    ✔ coerces numeric strings (0.191128ms)
+    ✔ treats null as 0 and undefined as NaN (0.107886ms)
+    ✔ treats holes in sparse arrays as undefined (0.096277ms)
+    ✔ does not count non-numeric strings or plain objects (0.161229ms)
+    ✔ coerces booleans to 1 and 0 (0.103451ms)
+  ✔ non-number elements (JS comparison coercion) (0.83718ms)
+✔ countPositive (9.319242ms)
+ℹ tests 20
+ℹ suites 4
+ℹ pass 20
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 121.456531
+ℹ start of coverage report
+ℹ ---------------------------------------------------------------------------------
+ℹ file                           | line % | branch % | funcs % | uncovered lines
+ℹ ---------------------------------------------------------------------------------
+ℹ hw1.js                         |  60.22 |   100.00 |   25.00 | 11-24 36-46 79-90
+ℹ test                           |        |          |         | 
+ℹ  promptA_countPositive.test.js | 100.00 |   100.00 |   96.43 | 
+ℹ ---------------------------------------------------------------------------------
+ℹ all files                      |  81.22 |   100.00 |   87.50 | 
+ℹ ---------------------------------------------------------------------------------
+ℹ end of coverage report
+(node:170547) MaxListenersExceededWarning: Possible EventEmitter memory leak detected. 11 end listeners added to [TestsStream]. MaxListeners is 10. Use emitter.setMaxListeners() to increase limit
+(Use `node --trace-warnings ...` to show where the warning was created)

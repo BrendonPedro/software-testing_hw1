@@ -1,0 +1,200 @@
+TAP version 13
+# Subtest: findLast
+    # Subtest: input validation
+        # Subtest: throws TypeError when the first parameter is not an array
+        ok 1 - throws TypeError when the first parameter is not an array
+          ---
+          duration_ms: 4.531783
+          type: 'test'
+          ...
+        # Subtest: throws TypeError when the second parameter is not a number
+        ok 2 - throws TypeError when the second parameter is not a number
+          ---
+          duration_ms: 0.764246
+          type: 'test'
+          ...
+        # Subtest: validates the array before the number
+        ok 3 - validates the array before the number
+          ---
+          duration_ms: 0.228837
+          type: 'test'
+          ...
+        1..3
+    ok 1 - input validation
+      ---
+      duration_ms: 6.616059
+      type: 'suite'
+      ...
+    # Subtest: search behavior
+        # Subtest: returns -1 for an empty array
+        ok 1 - returns -1 for an empty array
+          ---
+          duration_ms: 0.443748
+          type: 'test'
+          ...
+        # Subtest: returns -1 when the value is not present
+        ok 2 - returns -1 when the value is not present
+          ---
+          duration_ms: 0.088706
+          type: 'test'
+          ...
+        # Subtest: returns the index of the last element when it matches
+        ok 3 - returns the index of the last element when it matches
+          ---
+          duration_ms: 0.155551
+          type: 'test'
+          ...
+        # Subtest: returns the index of a match in the middle
+        ok 4 - returns the index of a match in the middle
+          ---
+          duration_ms: 0.089004
+          type: 'test'
+          ...
+        # Subtest: returns the last index when the value occurs multiple times
+        ok 5 - returns the last index when the value occurs multiple times
+          ---
+          duration_ms: 0.135211
+          type: 'test'
+          ...
+        # Subtest: returns 0 when the only match is at index 0
+        not ok 6 - returns 0 when the only match is at index 0
+          ---
+          duration_ms: 2.101441
+          type: 'test'
+          location: '/mnt/c/Users/user.DESKTOP-7QU46KG/Desktop/NYCU/Courses/Fall 2026/Software Testing/Homework/test/promptA_findLast.test.js:53:9'
+          failureType: 'testCodeFailure'
+          error: |-
+            Expected values to be strictly equal:
+            
+            -1 !== 0
+            
+          code: 'ERR_ASSERTION'
+          name: 'AssertionError'
+          expected: 0
+          actual: -1
+          operator: 'strictEqual'
+          stack: |-
+            TestContext.<anonymous> (/mnt/c/Users/user.DESKTOP-7QU46KG/Desktop/NYCU/Courses/Fall 2026/Software Testing/Homework/test/promptA_findLast.test.js:54:20)
+            Test.runInAsyncScope (node:async_hooks:214:14)
+            Test.run (node:internal/test_runner/test:1047:25)
+            Suite.processPendingSubtests (node:internal/test_runner/test:744:18)
+            Test.postRun (node:internal/test_runner/test:1173:19)
+            Test.run (node:internal/test_runner/test:1101:12)
+            async Suite.processPendingSubtests (node:internal/test_runner/test:744:7)
+          ...
+        # Subtest: returns 0 for a single-element array that matches
+        not ok 7 - returns 0 for a single-element array that matches
+          ---
+          duration_ms: 0.177535
+          type: 'test'
+          location: '/mnt/c/Users/user.DESKTOP-7QU46KG/Desktop/NYCU/Courses/Fall 2026/Software Testing/Homework/test/promptA_findLast.test.js:57:9'
+          failureType: 'testCodeFailure'
+          error: |-
+            Expected values to be strictly equal:
+            
+            -1 !== 0
+            
+          code: 'ERR_ASSERTION'
+          name: 'AssertionError'
+          expected: 0
+          actual: -1
+          operator: 'strictEqual'
+          stack: |-
+            TestContext.<anonymous> (/mnt/c/Users/user.DESKTOP-7QU46KG/Desktop/NYCU/Courses/Fall 2026/Software Testing/Homework/test/promptA_findLast.test.js:58:20)
+            Test.runInAsyncScope (node:async_hooks:214:14)
+            Test.run (node:internal/test_runner/test:1047:25)
+            Suite.processPendingSubtests (node:internal/test_runner/test:744:18)
+            Test.postRun (node:internal/test_runner/test:1173:19)
+            Test.run (node:internal/test_runner/test:1101:12)
+            async Suite.processPendingSubtests (node:internal/test_runner/test:744:7)
+          ...
+        # Subtest: uses strict equality (no type coercion)
+        ok 8 - uses strict equality (no type coercion)
+          ---
+          duration_ms: 0.152849
+          type: 'test'
+          ...
+        # Subtest: never finds NaN, since NaN !== NaN
+        ok 9 - never finds NaN, since NaN !== NaN
+          ---
+          duration_ms: 0.396621
+          type: 'test'
+          ...
+        # Subtest: treats 0 and -0 as equal
+        ok 10 - treats 0 and -0 as equal
+          ---
+          duration_ms: 0.137245
+          type: 'test'
+          ...
+        # Subtest: handles negative numbers, decimals and Infinity
+        not ok 11 - handles negative numbers, decimals and Infinity
+          ---
+          duration_ms: 0.137727
+          type: 'test'
+          location: '/mnt/c/Users/user.DESKTOP-7QU46KG/Desktop/NYCU/Courses/Fall 2026/Software Testing/Homework/test/promptA_findLast.test.js:74:9'
+          failureType: 'testCodeFailure'
+          error: |-
+            Expected values to be strictly equal:
+            
+            -1 !== 0
+            
+          code: 'ERR_ASSERTION'
+          name: 'AssertionError'
+          expected: 0
+          actual: -1
+          operator: 'strictEqual'
+          stack: |-
+            TestContext.<anonymous> (/mnt/c/Users/user.DESKTOP-7QU46KG/Desktop/NYCU/Courses/Fall 2026/Software Testing/Homework/test/promptA_findLast.test.js:77:20)
+            Test.runInAsyncScope (node:async_hooks:214:14)
+            Test.run (node:internal/test_runner/test:1047:25)
+            Suite.processPendingSubtests (node:internal/test_runner/test:744:18)
+            Test.postRun (node:internal/test_runner/test:1173:19)
+            Test.run (node:internal/test_runner/test:1101:12)
+            async Suite.processPendingSubtests (node:internal/test_runner/test:744:7)
+          ...
+        # Subtest: does not mutate the input array
+        ok 12 - does not mutate the input array
+          ---
+          duration_ms: 0.60697
+          type: 'test'
+          ...
+        1..12
+    not ok 2 - search behavior
+      ---
+      duration_ms: 5.135757
+      type: 'suite'
+      location: '/mnt/c/Users/user.DESKTOP-7QU46KG/Desktop/NYCU/Courses/Fall 2026/Software Testing/Homework/test/promptA_findLast.test.js:32:5'
+      failureType: 'subtestsFailed'
+      error: '3 subtests failed'
+      code: 'ERR_TEST_FAILURE'
+      ...
+    1..2
+not ok 1 - findLast
+  ---
+  duration_ms: 12.59957
+  type: 'suite'
+  location: '/mnt/c/Users/user.DESKTOP-7QU46KG/Desktop/NYCU/Courses/Fall 2026/Software Testing/Homework/test/promptA_findLast.test.js:5:1'
+  failureType: 'subtestsFailed'
+  error: '1 subtest failed'
+  code: 'ERR_TEST_FAILURE'
+  ...
+1..1
+# tests 15
+# suites 3
+# pass 12
+# fail 3
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 193.024463
+# start of coverage report
+# ----------------------------------------------------------------------------
+# file                      | line % | branch % | funcs % | uncovered lines
+# ----------------------------------------------------------------------------
+# hw1.js                    |  62.37 |   100.00 |   25.00 | 36-46 57-68 79-90
+# test                      |        |          |         | 
+#  promptA_findLast.test.js | 100.00 |   100.00 |  100.00 | 
+# ----------------------------------------------------------------------------
+# all files                 |  80.45 |   100.00 |   88.00 | 
+# ----------------------------------------------------------------------------
+# end of coverage report

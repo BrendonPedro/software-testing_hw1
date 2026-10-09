@@ -1,0 +1,69 @@
+▶ oddOrPos
+  ▶ input validation
+    ✔ throws TypeError for non-array inputs (2.723477ms)
+    ✔ throws when called with no arguments (0.29575ms)
+  ✔ input validation (5.461269ms)
+  ▶ counting
+    ✔ returns 0 for an empty array (0.550946ms)
+    ✔ counts a single positive odd number (0.173053ms)
+    ✔ counts a single positive even number (0.106531ms)
+    ✔ does not count zero (0.169768ms)
+    ✔ does not count negative even numbers (0.128126ms)
+    ✔ counts all elements when every element is positive (0.153571ms)
+    ✔ counts only qualifying elements in a mixed array (0.16207ms)
+    ✔ counts positive non-integers (0.160479ms)
+    ✔ counts Infinity but not -Infinity or NaN (0.144005ms)
+    ✔ does not mutate the input array (0.635809ms)
+  ✔ counting (2.91339ms)
+  ▶ negative odd numbers
+    ✖ counts negative odd numbers (1.20133ms) # known fault: % yields -1 for negative odds
+    ✔ current behavior: negative odd numbers are not counted (0.147043ms)
+  ✔ negative odd numbers (1.599063ms)
+✔ oddOrPos (10.854033ms)
+ℹ tests 14
+ℹ suites 4
+ℹ pass 13
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 1
+ℹ duration_ms 210.490909
+ℹ start of coverage report
+ℹ ----------------------------------------------------------------------------
+ℹ file                      | line % | branch % | funcs % | uncovered lines
+ℹ ----------------------------------------------------------------------------
+ℹ hw1.js                    |  60.22 |   100.00 |   25.00 | 11-24 36-46 57-68
+ℹ test                      |        |          |         | 
+ℹ  promptA_oddOrPos.test.js | 100.00 |   100.00 |  100.00 | 
+ℹ ----------------------------------------------------------------------------
+ℹ all files                 |  78.61 |   100.00 |   87.50 | 
+ℹ ----------------------------------------------------------------------------
+ℹ end of coverage report
+
+✖ failing tests:
+
+test at test/promptA_oddOrPos.test.js:71:9
+✖ counts negative odd numbers (1.20133ms) # known fault: % yields -1 for negative odds
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:
+  
+  0 !== 3
+  
+      at TestContext.<anonymous> (/mnt/c/Users/user.DESKTOP-7QU46KG/Desktop/NYCU/Courses/Fall 2026/Software Testing/Homework/test/promptA_oddOrPos.test.js:72:20)
+      at Test.runInAsyncScope (node:async_hooks:214:14)
+      at Test.run (node:internal/test_runner/test:1047:25)
+      at Test.start (node:internal/test_runner/test:944:17)
+      at node:internal/test_runner/test:1440:71
+      at node:internal/per_context/primordials:466:82
+      at new Promise (<anonymous>)
+      at new SafePromise (node:internal/per_context/primordials:435:3)
+      at node:internal/per_context/primordials:466:9
+      at Array.map (<anonymous>) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: 0,
+    expected: 3,
+    operator: 'strictEqual',
+    diff: 'simple'
+  }
+(node:170581) MaxListenersExceededWarning: Possible EventEmitter memory leak detected. 11 end listeners added to [TestsStream]. MaxListeners is 10. Use emitter.setMaxListeners() to increase limit
+(Use `node --trace-warnings ...` to show where the warning was created)

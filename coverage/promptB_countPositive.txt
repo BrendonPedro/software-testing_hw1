@@ -1,0 +1,143 @@
+▶ countPositive
+  ▶ valid arrays
+    ✔ returns 0 for an empty array (1.535474ms)
+    ✔ counts a single positive element (0.09133ms)
+    ✔ returns 0 for a single negative element (0.071141ms)
+    ✔ counts all elements when every element is positive (0.261652ms)
+    ✔ returns 0 when every element is negative (0.084792ms)
+    ✖ counts only positive elements in a mixed array (0.785316ms)
+    ✖ does not count zero as positive (0.145145ms)
+    ✖ does not count negative zero as positive (0.132027ms)
+    ✔ counts positive non-integer values (0.09331ms)
+    ✔ counts Number.MIN_VALUE as positive (0.090673ms)
+    ✔ counts very large positive values (0.066162ms)
+    ✔ counts Infinity as positive and -Infinity as not positive (0.063032ms)
+    ✔ does not count NaN as positive (0.063422ms)
+    ✔ counts duplicate positive values individually (0.057787ms)
+    ✔ counts positive elements regardless of position (0.137364ms)
+    ✔ handles a large array (2.026681ms)
+    ✔ returns a number (0.174757ms)
+    ✔ does not modify the input array (1.19454ms)
+    ✖ returns the same result on repeated calls (0.753866ms)
+  ✖ valid arrays (10.089437ms)
+  ▶ invalid input
+    ✔ throws TypeError when x is undefined (0.468566ms)
+    ✔ throws TypeError when x is null (0.055406ms)
+    ✔ throws TypeError when x is a number (0.045747ms)
+    ✔ throws TypeError when x is a string (0.040656ms)
+    ✔ throws TypeError when x is a boolean (0.105731ms)
+    ✔ throws TypeError when x is a plain object (0.065649ms)
+    ✔ throws TypeError when x is an array-like object (0.048077ms)
+    ✔ throws TypeError when x is a function (0.039876ms)
+    ✔ throws TypeError when x is a Set (0.145144ms)
+    ✔ throws TypeError when x is a typed array (0.054236ms)
+    ✔ throws TypeError when called with no arguments (0.065372ms)
+  ✔ invalid input (1.402814ms)
+✖ countPositive (12.012034ms)
+ℹ tests 30
+ℹ suites 3
+ℹ pass 26
+ℹ fail 4
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 138.379945
+ℹ start of coverage report
+ℹ ---------------------------------------------------------------------------------
+ℹ file                           | line % | branch % | funcs % | uncovered lines
+ℹ ---------------------------------------------------------------------------------
+ℹ hw1.js                         |  60.22 |   100.00 |   25.00 | 11-24 36-46 79-90
+ℹ test                           |        |          |         | 
+ℹ  promptB_countPositive.test.js | 100.00 |   100.00 |   96.43 | 
+ℹ ---------------------------------------------------------------------------------
+ℹ all files                      |  82.71 |   100.00 |   87.50 | 
+ℹ ---------------------------------------------------------------------------------
+ℹ end of coverage report
+
+✖ failing tests:
+
+test at test/promptB_countPositive.test.js:27:5
+✖ counts only positive elements in a mixed array (0.785316ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:
+  
+  3 !== 2
+  
+      at TestContext.<anonymous> (/mnt/c/Users/user.DESKTOP-7QU46KG/Desktop/NYCU/Courses/Fall 2026/Software Testing/Homework/test/promptB_countPositive.test.js:28:14)
+      at Test.runInAsyncScope (node:async_hooks:214:14)
+      at Test.run (node:internal/test_runner/test:1047:25)
+      at Suite.processPendingSubtests (node:internal/test_runner/test:744:18)
+      at Test.postRun (node:internal/test_runner/test:1173:19)
+      at Test.run (node:internal/test_runner/test:1101:12)
+      at async Suite.processPendingSubtests (node:internal/test_runner/test:744:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: 3,
+    expected: 2,
+    operator: 'strictEqual',
+    diff: 'simple'
+  }
+
+test at test/promptB_countPositive.test.js:32:5
+✖ does not count zero as positive (0.145145ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:
+  
+  1 !== 0
+  
+      at TestContext.<anonymous> (/mnt/c/Users/user.DESKTOP-7QU46KG/Desktop/NYCU/Courses/Fall 2026/Software Testing/Homework/test/promptB_countPositive.test.js:33:14)
+      at Test.runInAsyncScope (node:async_hooks:214:14)
+      at Test.run (node:internal/test_runner/test:1047:25)
+      at Suite.processPendingSubtests (node:internal/test_runner/test:744:18)
+      at Test.postRun (node:internal/test_runner/test:1173:19)
+      at Test.run (node:internal/test_runner/test:1101:12)
+      at async Suite.processPendingSubtests (node:internal/test_runner/test:744:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: 1,
+    expected: 0,
+    operator: 'strictEqual',
+    diff: 'simple'
+  }
+
+test at test/promptB_countPositive.test.js:37:5
+✖ does not count negative zero as positive (0.132027ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:
+  
+  1 !== 0
+  
+      at TestContext.<anonymous> (/mnt/c/Users/user.DESKTOP-7QU46KG/Desktop/NYCU/Courses/Fall 2026/Software Testing/Homework/test/promptB_countPositive.test.js:38:14)
+      at Test.runInAsyncScope (node:async_hooks:214:14)
+      at Test.run (node:internal/test_runner/test:1047:25)
+      at Suite.processPendingSubtests (node:internal/test_runner/test:744:18)
+      at Test.postRun (node:internal/test_runner/test:1173:19)
+      at Test.run (node:internal/test_runner/test:1101:12)
+      at async Suite.processPendingSubtests (node:internal/test_runner/test:744:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: 1,
+    expected: 0,
+    operator: 'strictEqual',
+    diff: 'simple'
+  }
+
+test at test/promptB_countPositive.test.js:90:5
+✖ returns the same result on repeated calls (0.753866ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:
+  
+  3 !== 2
+  
+      at TestContext.<anonymous> (/mnt/c/Users/user.DESKTOP-7QU46KG/Desktop/NYCU/Courses/Fall 2026/Software Testing/Homework/test/promptB_countPositive.test.js:92:14)
+      at Test.runInAsyncScope (node:async_hooks:214:14)
+      at Test.run (node:internal/test_runner/test:1047:25)
+      at Suite.processPendingSubtests (node:internal/test_runner/test:744:18)
+      at Test.postRun (node:internal/test_runner/test:1173:19)
+      at Test.run (node:internal/test_runner/test:1101:12)
+      at async Suite.processPendingSubtests (node:internal/test_runner/test:744:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: 3,
+    expected: 2,
+    operator: 'strictEqual',
+    diff: 'simple'
+  }
+(node:170564) MaxListenersExceededWarning: Possible EventEmitter memory leak detected. 11 end listeners added to [TestsStream]. MaxListeners is 10. Use emitter.setMaxListeners() to increase limit
+(Use `node --trace-warnings ...` to show where the warning was created)

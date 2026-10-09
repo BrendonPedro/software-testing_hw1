@@ -1,0 +1,107 @@
+▶ findLast
+  ▶ input validation
+    ✔ throws TypeError when the first parameter is not an array (4.531783ms)
+    ✔ throws TypeError when the second parameter is not a number (0.764246ms)
+    ✔ validates the array before the number (0.228837ms)
+  ✔ input validation (6.616059ms)
+  ▶ search behavior
+    ✔ returns -1 for an empty array (0.443748ms)
+    ✔ returns -1 when the value is not present (0.088706ms)
+    ✔ returns the index of the last element when it matches (0.155551ms)
+    ✔ returns the index of a match in the middle (0.089004ms)
+    ✔ returns the last index when the value occurs multiple times (0.135211ms)
+    ✖ returns 0 when the only match is at index 0 (2.101441ms)
+    ✖ returns 0 for a single-element array that matches (0.177535ms)
+    ✔ uses strict equality (no type coercion) (0.152849ms)
+    ✔ never finds NaN, since NaN !== NaN (0.396621ms)
+    ✔ treats 0 and -0 as equal (0.137245ms)
+    ✖ handles negative numbers, decimals and Infinity (0.137727ms)
+    ✔ does not mutate the input array (0.60697ms)
+  ✖ search behavior (5.135757ms)
+✖ findLast (12.59957ms)
+ℹ tests 15
+ℹ suites 3
+ℹ pass 12
+ℹ fail 3
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 193.024463
+ℹ start of coverage report
+ℹ ----------------------------------------------------------------------------
+ℹ file                      | line % | branch % | funcs % | uncovered lines
+ℹ ----------------------------------------------------------------------------
+ℹ hw1.js                    |  62.37 |   100.00 |   25.00 | 36-46 57-68 79-90
+ℹ test                      |        |          |         | 
+ℹ  promptA_findLast.test.js | 100.00 |   100.00 |  100.00 | 
+ℹ ----------------------------------------------------------------------------
+ℹ all files                 |  80.45 |   100.00 |   88.00 | 
+ℹ ----------------------------------------------------------------------------
+ℹ end of coverage report
+
+✖ failing tests:
+
+test at test/promptA_findLast.test.js:53:9
+✖ returns 0 when the only match is at index 0 (2.101441ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:
+  
+  -1 !== 0
+  
+      at TestContext.<anonymous> (/mnt/c/Users/user.DESKTOP-7QU46KG/Desktop/NYCU/Courses/Fall 2026/Software Testing/Homework/test/promptA_findLast.test.js:54:20)
+      at Test.runInAsyncScope (node:async_hooks:214:14)
+      at Test.run (node:internal/test_runner/test:1047:25)
+      at Suite.processPendingSubtests (node:internal/test_runner/test:744:18)
+      at Test.postRun (node:internal/test_runner/test:1173:19)
+      at Test.run (node:internal/test_runner/test:1101:12)
+      at async Suite.processPendingSubtests (node:internal/test_runner/test:744:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: -1,
+    expected: 0,
+    operator: 'strictEqual',
+    diff: 'simple'
+  }
+
+test at test/promptA_findLast.test.js:57:9
+✖ returns 0 for a single-element array that matches (0.177535ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:
+  
+  -1 !== 0
+  
+      at TestContext.<anonymous> (/mnt/c/Users/user.DESKTOP-7QU46KG/Desktop/NYCU/Courses/Fall 2026/Software Testing/Homework/test/promptA_findLast.test.js:58:20)
+      at Test.runInAsyncScope (node:async_hooks:214:14)
+      at Test.run (node:internal/test_runner/test:1047:25)
+      at Suite.processPendingSubtests (node:internal/test_runner/test:744:18)
+      at Test.postRun (node:internal/test_runner/test:1173:19)
+      at Test.run (node:internal/test_runner/test:1101:12)
+      at async Suite.processPendingSubtests (node:internal/test_runner/test:744:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: -1,
+    expected: 0,
+    operator: 'strictEqual',
+    diff: 'simple'
+  }
+
+test at test/promptA_findLast.test.js:74:9
+✖ handles negative numbers, decimals and Infinity (0.137727ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:
+  
+  -1 !== 0
+  
+      at TestContext.<anonymous> (/mnt/c/Users/user.DESKTOP-7QU46KG/Desktop/NYCU/Courses/Fall 2026/Software Testing/Homework/test/promptA_findLast.test.js:77:20)
+      at Test.runInAsyncScope (node:async_hooks:214:14)
+      at Test.run (node:internal/test_runner/test:1047:25)
+      at Suite.processPendingSubtests (node:internal/test_runner/test:744:18)
+      at Test.postRun (node:internal/test_runner/test:1173:19)
+      at Test.run (node:internal/test_runner/test:1101:12)
+      at async Suite.processPendingSubtests (node:internal/test_runner/test:744:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: -1,
+    expected: 0,
+    operator: 'strictEqual',
+    diff: 'simple'
+  }
+(node:170471) MaxListenersExceededWarning: Possible EventEmitter memory leak detected. 11 end listeners added to [TestsStream]. MaxListeners is 10. Use emitter.setMaxListeners() to increase limit
+(Use `node --trace-warnings ...` to show where the warning was created)

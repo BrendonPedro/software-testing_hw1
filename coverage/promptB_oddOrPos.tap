@@ -1,0 +1,395 @@
+TAP version 13
+# Subtest: oddOrPos
+    # Subtest: input validation
+        # Subtest: throws TypeError when x is undefined
+        ok 1 - throws TypeError when x is undefined
+          ---
+          duration_ms: 1.025917
+          type: 'test'
+          ...
+        # Subtest: throws TypeError when x is null
+        ok 2 - throws TypeError when x is null
+          ---
+          duration_ms: 0.570141
+          type: 'test'
+          ...
+        # Subtest: throws TypeError when x is a number
+        ok 3 - throws TypeError when x is a number
+          ---
+          duration_ms: 0.147413
+          type: 'test'
+          ...
+        # Subtest: throws TypeError when x is a string
+        ok 4 - throws TypeError when x is a string
+          ---
+          duration_ms: 0.200632
+          type: 'test'
+          ...
+        # Subtest: throws TypeError when x is a plain object
+        ok 5 - throws TypeError when x is a plain object
+          ---
+          duration_ms: 0.240118
+          type: 'test'
+          ...
+        # Subtest: throws TypeError when called with no arguments
+        ok 6 - throws TypeError when called with no arguments
+          ---
+          duration_ms: 0.15507
+          type: 'test'
+          ...
+        1..6
+    ok 1 - input validation
+      ---
+      duration_ms: 3.58031
+      type: 'suite'
+      ...
+    # Subtest: basic counting
+        # Subtest: returns 0 for an empty array
+        ok 1 - returns 0 for an empty array
+          ---
+          duration_ms: 0.258829
+          type: 'test'
+          ...
+        # Subtest: returns a number
+        ok 2 - returns a number
+          ---
+          duration_ms: 0.297423
+          type: 'test'
+          ...
+        # Subtest: counts positive odd numbers
+        ok 3 - counts positive odd numbers
+          ---
+          duration_ms: 0.172057
+          type: 'test'
+          ...
+        # Subtest: counts positive even numbers (positive)
+        ok 4 - counts positive even numbers (positive)
+          ---
+          duration_ms: 0.930799
+          type: 'test'
+          ...
+        # Subtest: counts negative odd numbers (odd)
+        not ok 5 - counts negative odd numbers (odd)
+          ---
+          duration_ms: 2.744995
+          type: 'test'
+          location: '/mnt/c/Users/user.DESKTOP-7QU46KG/Desktop/NYCU/Courses/Fall 2026/Software Testing/Homework/test/promptB_oddOrPos.test.js:49:5'
+          failureType: 'testCodeFailure'
+          error: |-
+            Expected values to be strictly equal:
+            
+            0 !== 3
+            
+          code: 'ERR_ASSERTION'
+          name: 'AssertionError'
+          expected: 3
+          actual: 0
+          operator: 'strictEqual'
+          stack: |-
+            TestContext.<anonymous> (/mnt/c/Users/user.DESKTOP-7QU46KG/Desktop/NYCU/Courses/Fall 2026/Software Testing/Homework/test/promptB_oddOrPos.test.js:50:14)
+            Test.runInAsyncScope (node:async_hooks:214:14)
+            Test.run (node:internal/test_runner/test:1047:25)
+            Suite.processPendingSubtests (node:internal/test_runner/test:744:18)
+            Test.postRun (node:internal/test_runner/test:1173:19)
+            Test.run (node:internal/test_runner/test:1101:12)
+            async Suite.processPendingSubtests (node:internal/test_runner/test:744:7)
+          ...
+        # Subtest: does not count negative even numbers
+        ok 6 - does not count negative even numbers
+          ---
+          duration_ms: 0.322796
+          type: 'test'
+          ...
+        # Subtest: does not count zero (neither odd nor positive)
+        ok 7 - does not count zero (neither odd nor positive)
+          ---
+          duration_ms: 0.251604
+          type: 'test'
+          ...
+        # Subtest: does not count negative zero
+        ok 8 - does not count negative zero
+          ---
+          duration_ms: 0.167757
+          type: 'test'
+          ...
+        1..8
+    not ok 2 - basic counting
+      ---
+      duration_ms: 7.311407
+      type: 'suite'
+      location: '/mnt/c/Users/user.DESKTOP-7QU46KG/Desktop/NYCU/Courses/Fall 2026/Software Testing/Homework/test/promptB_oddOrPos.test.js:32:3'
+      failureType: 'subtestsFailed'
+      error: '1 subtest failed'
+      code: 'ERR_TEST_FAILURE'
+      ...
+    # Subtest: single element arrays
+        # Subtest: [1] -> 1
+        ok 1 - [1] -> 1
+          ---
+          duration_ms: 0.24721
+          type: 'test'
+          ...
+        # Subtest: [2] -> 1
+        ok 2 - [2] -> 1
+          ---
+          duration_ms: 0.191101
+          type: 'test'
+          ...
+        # Subtest: [-1] -> 1
+        not ok 3 - [-1] -> 1
+          ---
+          duration_ms: 0.285445
+          type: 'test'
+          location: '/mnt/c/Users/user.DESKTOP-7QU46KG/Desktop/NYCU/Courses/Fall 2026/Software Testing/Homework/test/promptB_oddOrPos.test.js:69:5'
+          failureType: 'testCodeFailure'
+          error: |-
+            Expected values to be strictly equal:
+            
+            0 !== 1
+            
+          code: 'ERR_ASSERTION'
+          name: 'AssertionError'
+          expected: 1
+          actual: 0
+          operator: 'strictEqual'
+          stack: |-
+            TestContext.<anonymous> (/mnt/c/Users/user.DESKTOP-7QU46KG/Desktop/NYCU/Courses/Fall 2026/Software Testing/Homework/test/promptB_oddOrPos.test.js:69:36)
+            Test.runInAsyncScope (node:async_hooks:214:14)
+            Test.run (node:internal/test_runner/test:1047:25)
+            Suite.processPendingSubtests (node:internal/test_runner/test:744:18)
+            Test.postRun (node:internal/test_runner/test:1173:19)
+            Test.run (node:internal/test_runner/test:1101:12)
+            async Suite.processPendingSubtests (node:internal/test_runner/test:744:7)
+          ...
+        # Subtest: [-2] -> 0
+        ok 4 - [-2] -> 0
+          ---
+          duration_ms: 0.166842
+          type: 'test'
+          ...
+        1..4
+    not ok 3 - single element arrays
+      ---
+      duration_ms: 1.210972
+      type: 'suite'
+      location: '/mnt/c/Users/user.DESKTOP-7QU46KG/Desktop/NYCU/Courses/Fall 2026/Software Testing/Homework/test/promptB_oddOrPos.test.js:66:3'
+      failureType: 'subtestsFailed'
+      error: '1 subtest failed'
+      code: 'ERR_TEST_FAILURE'
+      ...
+    # Subtest: mixed arrays
+        # Subtest: counts each qualifying element exactly once
+        not ok 1 - counts each qualifying element exactly once
+          ---
+          duration_ms: 0.657456
+          type: 'test'
+          location: '/mnt/c/Users/user.DESKTOP-7QU46KG/Desktop/NYCU/Courses/Fall 2026/Software Testing/Homework/test/promptB_oddOrPos.test.js:74:5'
+          failureType: 'testCodeFailure'
+          error: |-
+            Expected values to be strictly equal:
+            
+            2 !== 3
+            
+          code: 'ERR_ASSERTION'
+          name: 'AssertionError'
+          expected: 3
+          actual: 2
+          operator: 'strictEqual'
+          stack: |-
+            TestContext.<anonymous> (/mnt/c/Users/user.DESKTOP-7QU46KG/Desktop/NYCU/Courses/Fall 2026/Software Testing/Homework/test/promptB_oddOrPos.test.js:76:14)
+            Test.runInAsyncScope (node:async_hooks:214:14)
+            Test.run (node:internal/test_runner/test:1047:25)
+            Test.start (node:internal/test_runner/test:944:17)
+            node:internal/test_runner/test:1440:71
+            node:internal/per_context/primordials:466:82
+            new Promise (<anonymous>)
+            new SafePromise (node:internal/per_context/primordials:435:3)
+            node:internal/per_context/primordials:466:9
+            Array.map (<anonymous>)
+          ...
+        # Subtest: elements that are both odd and positive are not double counted
+        ok 2 - elements that are both odd and positive are not double counted
+          ---
+          duration_ms: 0.20678
+          type: 'test'
+          ...
+        # Subtest: counts duplicates individually
+        not ok 3 - counts duplicates individually
+          ---
+          duration_ms: 0.377821
+          type: 'test'
+          location: '/mnt/c/Users/user.DESKTOP-7QU46KG/Desktop/NYCU/Courses/Fall 2026/Software Testing/Homework/test/promptB_oddOrPos.test.js:83:5'
+          failureType: 'testCodeFailure'
+          error: |-
+            Expected values to be strictly equal:
+            
+            2 !== 4
+            
+          code: 'ERR_ASSERTION'
+          name: 'AssertionError'
+          expected: 4
+          actual: 2
+          operator: 'strictEqual'
+          stack: |-
+            TestContext.<anonymous> (/mnt/c/Users/user.DESKTOP-7QU46KG/Desktop/NYCU/Courses/Fall 2026/Software Testing/Homework/test/promptB_oddOrPos.test.js:84:14)
+            Test.runInAsyncScope (node:async_hooks:214:14)
+            Test.run (node:internal/test_runner/test:1047:25)
+            Suite.processPendingSubtests (node:internal/test_runner/test:744:18)
+            Test.postRun (node:internal/test_runner/test:1173:19)
+            Test.run (node:internal/test_runner/test:1101:12)
+            async Suite.processPendingSubtests (node:internal/test_runner/test:744:7)
+          ...
+        # Subtest: handles an array with only non-qualifying elements
+        ok 4 - handles an array with only non-qualifying elements
+          ---
+          duration_ms: 0.168403
+          type: 'test'
+          ...
+        # Subtest: handles large magnitude values
+        not ok 5 - handles large magnitude values
+          ---
+          duration_ms: 0.207848
+          type: 'test'
+          location: '/mnt/c/Users/user.DESKTOP-7QU46KG/Desktop/NYCU/Courses/Fall 2026/Software Testing/Homework/test/promptB_oddOrPos.test.js:91:5'
+          failureType: 'testCodeFailure'
+          error: |-
+            Expected values to be strictly equal:
+            
+            1 !== 2
+            
+          code: 'ERR_ASSERTION'
+          name: 'AssertionError'
+          expected: 2
+          actual: 1
+          operator: 'strictEqual'
+          stack: |-
+            TestContext.<anonymous> (/mnt/c/Users/user.DESKTOP-7QU46KG/Desktop/NYCU/Courses/Fall 2026/Software Testing/Homework/test/promptB_oddOrPos.test.js:92:14)
+            Test.runInAsyncScope (node:async_hooks:214:14)
+            Test.run (node:internal/test_runner/test:1047:25)
+            Suite.processPendingSubtests (node:internal/test_runner/test:744:18)
+            Test.postRun (node:internal/test_runner/test:1173:19)
+            Test.run (node:internal/test_runner/test:1101:12)
+            async Suite.processPendingSubtests (node:internal/test_runner/test:744:7)
+          ...
+        # Subtest: handles long arrays
+        not ok 6 - handles long arrays
+          ---
+          duration_ms: 0.308005
+          type: 'test'
+          location: '/mnt/c/Users/user.DESKTOP-7QU46KG/Desktop/NYCU/Courses/Fall 2026/Software Testing/Homework/test/promptB_oddOrPos.test.js:98:5'
+          failureType: 'testCodeFailure'
+          error: |-
+            Expected values to be strictly equal:
+            
+            500 !== 750
+            
+          code: 'ERR_ASSERTION'
+          name: 'AssertionError'
+          expected: 750
+          actual: 500
+          operator: 'strictEqual'
+          stack: |-
+            TestContext.<anonymous> (/mnt/c/Users/user.DESKTOP-7QU46KG/Desktop/NYCU/Courses/Fall 2026/Software Testing/Homework/test/promptB_oddOrPos.test.js:102:14)
+            Test.runInAsyncScope (node:async_hooks:214:14)
+            Test.run (node:internal/test_runner/test:1047:25)
+            Suite.processPendingSubtests (node:internal/test_runner/test:744:18)
+            Test.postRun (node:internal/test_runner/test:1173:19)
+            Test.run (node:internal/test_runner/test:1101:12)
+            async Suite.processPendingSubtests (node:internal/test_runner/test:744:7)
+          ...
+        1..6
+    not ok 4 - mixed arrays
+      ---
+      duration_ms: 2.253564
+      type: 'suite'
+      location: '/mnt/c/Users/user.DESKTOP-7QU46KG/Desktop/NYCU/Courses/Fall 2026/Software Testing/Homework/test/promptB_oddOrPos.test.js:73:3'
+      failureType: 'subtestsFailed'
+      error: '4 subtests failed'
+      code: 'ERR_TEST_FAILURE'
+      ...
+    # Subtest: non-integer and special numbers
+        # Subtest: counts positive non-integers (positive)
+        ok 1 - counts positive non-integers (positive)
+          ---
+          duration_ms: 0.250783
+          type: 'test'
+          ...
+        # Subtest: does not count negative non-integers (not odd, not positive)
+        ok 2 - does not count negative non-integers (not odd, not positive)
+          ---
+          duration_ms: 0.162203
+          type: 'test'
+          ...
+        # Subtest: counts Infinity (positive)
+        ok 3 - counts Infinity (positive)
+          ---
+          duration_ms: 0.204399
+          type: 'test'
+          ...
+        # Subtest: does not count -Infinity
+        ok 4 - does not count -Infinity
+          ---
+          duration_ms: 0.159525
+          type: 'test'
+          ...
+        # Subtest: does not count NaN
+        ok 5 - does not count NaN
+          ---
+          duration_ms: 0.144601
+          type: 'test'
+          ...
+        1..5
+    ok 5 - non-integer and special numbers
+      ---
+      duration_ms: 1.210742
+      type: 'suite'
+      ...
+    # Subtest: side effects
+        # Subtest: does not modify the input array
+        ok 1 - does not modify the input array
+          ---
+          duration_ms: 2.703161
+          type: 'test'
+          ...
+        # Subtest: returns the same result on repeated calls
+        ok 2 - returns the same result on repeated calls
+          ---
+          duration_ms: 0.538875
+          type: 'test'
+          ...
+        1..2
+    ok 6 - side effects
+      ---
+      duration_ms: 3.869419
+      type: 'suite'
+      ...
+    1..6
+not ok 1 - oddOrPos
+  ---
+  duration_ms: 20.313644
+  type: 'suite'
+  location: '/mnt/c/Users/user.DESKTOP-7QU46KG/Desktop/NYCU/Courses/Fall 2026/Software Testing/Homework/test/promptB_oddOrPos.test.js:5:1'
+  failureType: 'subtestsFailed'
+  error: '3 subtests failed'
+  code: 'ERR_TEST_FAILURE'
+  ...
+1..1
+# tests 31
+# suites 7
+# pass 25
+# fail 6
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 214.423653
+# start of coverage report
+# ----------------------------------------------------------------------------
+# file                      | line % | branch % | funcs % | uncovered lines
+# ----------------------------------------------------------------------------
+# hw1.js                    |  60.22 |   100.00 |   25.00 | 11-24 36-46 57-68
+# test                      |        |          |         | 
+#  promptB_oddOrPos.test.js | 100.00 |   100.00 |  100.00 | 
+# ----------------------------------------------------------------------------
+# all files                 |  84.19 |   100.00 |   93.75 | 
+# ----------------------------------------------------------------------------
+# end of coverage report

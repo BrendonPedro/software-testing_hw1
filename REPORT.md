@@ -12,7 +12,7 @@ Claude filled the answers in to this REPORT.md.
 (a) The loop uses `i > 0`, so it never checks index 0.
 Change it to `i >= 0`.
 
-(b) `findLast(null, 2)` throws `TypeError` during input validation, before the faulty loop is reached.
+(b) `findLast("hello", 2)` throws `TypeError` during input validation, before the faulty loop is reached.
 Expected: `TypeError`.
 Actual: `TypeError`.
 
@@ -38,14 +38,22 @@ Both eventually return -1.
 (a) The loop searches from the start and returns the first zero instead of the last zero.
 Change the loop to `for (let i = x.length - 1; i >= 0; i--)`.
 
-(b) `lastZero(null)` throws `TypeError` before the loop.
+(b) My original Part A answer was `lastZero([])`: the array is empty, so the loop body is never executed.
+Expected: -1.
+Actual: -1.
+After reviewing Claude's B3 answer, I changed this to `lastZero(null)`, which throws `TypeError` before the loop is reached.
 Expected: `TypeError`.
 Actual: `TypeError`.
+This is a correction made after B3, not part of my independent first answer.
 
-(c) `lastZero([0])` returns 0 in both versions.
+(c) My original Part A answer was `lastZero([0, 1, 2])`: the function returns the first zero, which is also the last zero, so the output is correct.
+Expected: 0.
+Actual: 0.
+After reviewing Claude's B3 answer, I changed this to `lastZero([0])`, which returns 0 in both versions.
 Both start at index 0 and immediately find the only zero.
 Expected: 0.
 Actual: 0.
+This is a correction made after B3, not part of my independent first answer.
 
 (d) In my original Part A answer, I wrote that this was not possible.
 When checking Claude's later answer in B3, I found a valid example: `lastZero([1, 0])`.
@@ -94,9 +102,9 @@ Change it to `x[i] % 2 !== 0` for integer inputs.
 Expected: 0.
 Actual: 0.
 
-(c) `oddOrPos([1, 2, 4])` checks the faulty condition, but there are no negative odd values.
-Expected: 3.
-Actual: 3.
+(c) `oddOrPos([1, 2, -2])` checks the faulty condition, but there are no negative odd values.
+Expected: 2.
+Actual: 2.
 
 (d) Not possible for ordinary integer arrays.
 Each negative odd integer is missed by the faulty code, so the final count is too small.
@@ -112,21 +120,21 @@ Actual: 2.
 
 ### B1. Assertion echo experiment
 
-Setup: For the official B1 runs, each prompt used a fresh Claude Code session in an isolated sandbox (see AI usage log).
-The coverage values below are the whole-file `hw1.js` values printed by Node, not per-function values.
+Setup: For the official B1 runs, each prompt used a fresh Claude Code session in an isolated sandbox (see AI usage log, T4 to T12).
+Line % and Branch % are function-specific: they count only the lines of the function under test, measured with `scripts/b1-table.js` (raw output in `coverage/`), because Node reports coverage per file and `hw1.js` holds all four functions.
 Node's branch figure is V8 block coverage.
-The function-specific figures should be substituted only if `scripts/b1-table.js` has been run and checked.
+Node's whole-file figures for `hw1.js` (59.14% to 62.37% of lines, 100% of branches) are in `evidence/`.
 
 | Program | Prompt | # tests | # failing | Line % | Branch % | Fault revealed? (Y/N) |
 |---|---|---|---|---|---|---|
-| findLast | A | 15 | 3 | 62.37 | 100.00 | Y |
-| findLast | B | 44 | 2 | 62.37 | 100.00 | Y |
-| lastZero | A | 20 | 3 | 59.14 | 100.00 | Y |
-| lastZero | B | 31 | 3 | 59.14 | 100.00 | Y |
-| countPositive | A | 20 | 0 | 60.22 | 100.00 | N |
-| countPositive | B | 30 | 4 | 60.22 | 100.00 | Y |
-| oddOrPos | A | 14 | 0 | 60.22 | 100.00 | N (1 TODO) |
-| oddOrPos | B | 31 | 6 | 60.22 | 100.00 | Y |
+| findLast | A | 15 | 3 | 100 (14/14) | 100 (8/8) | Y |
+| findLast | B | 44 | 2 | 100 (14/14) | 100 (8/8) | Y |
+| lastZero | A | 20 | 3 | 100 (11/11) | 100 (6/6) | Y |
+| lastZero | B | 31 | 3 | 100 (11/11) | 100 (6/6) | Y |
+| countPositive | A | 20 | 0 | 100 (12/12) | 100 (6/6) | N |
+| countPositive | B | 30 | 4 | 100 (12/12) | 100 (6/6) | Y |
+| oddOrPos | A | 14 | 0 | 100 (12/12) | 100 (7/7) | N (1 TODO) |
+| oddOrPos | B | 31 | 6 | 100 (12/12) | 100 (7/7) | Y |
 
 (a) An example of assertion echo is from Prompt A for `countPositive`:
 
@@ -140,7 +148,7 @@ After fixing `>= 0` to `> 0`, the test would fail because it still expects 1.
 Claude copied the faulty behavior into its expected result.
 The `oddOrPos` Prompt A suite also expected 0 for `[-3, -5, -1]`, although the correct count is 3.
 
-(b) Both prompts reached the same reported branch coverage, but they did not find the same faults.
+(b) Both prompts reached the same coverage (100% of the lines and branches of each function), but they did not find the same faults.
 Prompt A found the problems in `findLast` and `lastZero`, but its `countPositive` tests all passed, and `oddOrPos` had no normal failures (one test was TODO).
 Prompt B revealed faults in all four programs.
 More coverage only means more code was run; it does not mean the expected results are correct.
@@ -166,7 +174,7 @@ The fault is reached, creates a wrong count, and reaches the return value, but t
 ### B3. Checking the agent's reasoning
 
 (a) I evaluated Claude's first isolated B3 response.
-I accidentally ran B3 a second time, and both transcripts are kept in the AI usage log.
+I accidentally ran B3 a second time, and both transcripts are kept in the AI usage log (T13 and T14).
 The results below refer to the first run.
 
 | Question | Claude's answer | Evaluation | Independent check |

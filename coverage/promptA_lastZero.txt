@@ -1,0 +1,121 @@
+▶ lastZero
+  ▶ input validation
+    ✔ throws TypeError for undefined (1.631128ms)
+    ✔ throws TypeError for null (0.091901ms)
+    ✔ throws TypeError for a number (0.154771ms)
+    ✔ throws TypeError for a string (0.182795ms)
+    ✔ throws TypeError for a plain object (0.068838ms)
+    ✔ throws TypeError for a typed array (0.054949ms)
+    ✔ throws TypeError when called with no arguments (0.118846ms)
+  ✔ input validation (3.148897ms)
+  ▶ no zero present
+    ✔ returns -1 for an empty array (0.178984ms)
+    ✔ returns -1 when no element is zero (0.081525ms)
+    ✔ does not treat zero-like values as zero (0.189195ms)
+    ✔ returns -1 for a sparse array with only holes (0.110505ms)
+  ✔ no zero present (0.767329ms)
+  ▶ single zero
+    ✔ returns 0 for [0] (0.184972ms)
+    ✔ finds a zero at the start (0.148895ms)
+    ✔ finds a zero in the middle (2.854452ms)
+    ✔ finds a zero at the end (0.311082ms)
+    ✔ treats -0 as zero (0.079286ms)
+  ✔ single zero (3.80852ms)
+  ▶ multiple zeros
+    ✖ returns the index of the last zero (1.579749ms)
+    ✖ returns the last index when every element is zero (0.235587ms)
+    ✖ returns the last zero when it is not at the end (0.135467ms)
+  ✖ multiple zeros (2.253153ms)
+  ✔ does not mutate the input array (0.613472ms)
+✖ lastZero (11.951143ms)
+ℹ tests 20
+ℹ suites 5
+ℹ pass 17
+ℹ fail 3
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 141.271861
+ℹ start of coverage report
+ℹ ----------------------------------------------------------------------------
+ℹ file                      | line % | branch % | funcs % | uncovered lines
+ℹ ----------------------------------------------------------------------------
+ℹ hw1.js                    |  59.14 |   100.00 |   25.00 | 11-24 57-68 79-90
+ℹ test                      |        |          |         | 
+ℹ  promptA_lastZero.test.js | 100.00 |   100.00 |  100.00 | 
+ℹ ----------------------------------------------------------------------------
+ℹ all files                 |  78.89 |   100.00 |   88.46 | 
+ℹ ----------------------------------------------------------------------------
+ℹ end of coverage report
+
+✖ failing tests:
+
+test at test/promptA_lastZero.test.js:69:9
+✖ returns the index of the last zero (1.579749ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:
+  
+  0 !== 2
+  
+      at TestContext.<anonymous> (/mnt/c/Users/user.DESKTOP-7QU46KG/Desktop/NYCU/Courses/Fall 2026/Software Testing/Homework/test/promptA_lastZero.test.js:70:20)
+      at Test.runInAsyncScope (node:async_hooks:214:14)
+      at Test.run (node:internal/test_runner/test:1047:25)
+      at Test.start (node:internal/test_runner/test:944:17)
+      at node:internal/test_runner/test:1440:71
+      at node:internal/per_context/primordials:466:82
+      at new Promise (<anonymous>)
+      at new SafePromise (node:internal/per_context/primordials:435:3)
+      at node:internal/per_context/primordials:466:9
+      at Array.map (<anonymous>) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: 0,
+    expected: 2,
+    operator: 'strictEqual',
+    diff: 'simple'
+  }
+
+test at test/promptA_lastZero.test.js:73:9
+✖ returns the last index when every element is zero (0.235587ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:
+  
+  0 !== 3
+  
+      at TestContext.<anonymous> (/mnt/c/Users/user.DESKTOP-7QU46KG/Desktop/NYCU/Courses/Fall 2026/Software Testing/Homework/test/promptA_lastZero.test.js:74:20)
+      at Test.runInAsyncScope (node:async_hooks:214:14)
+      at Test.run (node:internal/test_runner/test:1047:25)
+      at Suite.processPendingSubtests (node:internal/test_runner/test:744:18)
+      at Test.postRun (node:internal/test_runner/test:1173:19)
+      at Test.run (node:internal/test_runner/test:1101:12)
+      at async Promise.all (index 0)
+      at async Suite.run (node:internal/test_runner/test:1442:7)
+      at async Suite.processPendingSubtests (node:internal/test_runner/test:744:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: 0,
+    expected: 3,
+    operator: 'strictEqual',
+    diff: 'simple'
+  }
+
+test at test/promptA_lastZero.test.js:77:9
+✖ returns the last zero when it is not at the end (0.135467ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:
+  
+  0 !== 4
+  
+      at TestContext.<anonymous> (/mnt/c/Users/user.DESKTOP-7QU46KG/Desktop/NYCU/Courses/Fall 2026/Software Testing/Homework/test/promptA_lastZero.test.js:78:20)
+      at Test.runInAsyncScope (node:async_hooks:214:14)
+      at Test.run (node:internal/test_runner/test:1047:25)
+      at Suite.processPendingSubtests (node:internal/test_runner/test:744:18)
+      at Test.postRun (node:internal/test_runner/test:1173:19)
+      at Test.run (node:internal/test_runner/test:1101:12)
+      at async Suite.processPendingSubtests (node:internal/test_runner/test:744:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: 0,
+    expected: 4,
+    operator: 'strictEqual',
+    diff: 'simple'
+  }
+(node:170513) MaxListenersExceededWarning: Possible EventEmitter memory leak detected. 11 end listeners added to [TestsStream]. MaxListeners is 10. Use emitter.setMaxListeners() to increase limit
+(Use `node --trace-warnings ...` to show where the warning was created)

@@ -1,0 +1,125 @@
+▶ lastZero - returns last index of 0
+  ✔ single zero (0.881193ms)
+  ✔ zero at the start only (0.098771ms)
+  ✔ zero in the middle only (0.120572ms)
+  ✔ zero at the end only (0.070617ms)
+  ✖ multiple zeros returns the last one (0.651298ms)
+  ✖ multiple zeros with last at end (0.136307ms)
+  ✖ all zeros (0.105382ms)
+  ✔ negative numbers around a zero (0.079126ms)
+  ✔ -0 is a zero (0.067168ms)
+  ✔ mixed types: only numeric 0 counts (0.068461ms)
+  ✔ large array with zero near the end (0.9623ms)
+✖ lastZero - returns last index of 0 (4.314849ms)
+▶ lastZero - returns -1 when 0 is absent
+  ✔ empty array (1.226949ms)
+  ✔ no zero among numbers (0.192616ms)
+  ✔ single non-zero element (0.075523ms)
+  ✔ values close to zero are not zero (0.092305ms)
+  ✔ NaN, null, undefined, false are not zero (0.118694ms)
+  ✔ string "0" is not the number 0 (0.072803ms)
+✔ lastZero - returns -1 when 0 is absent (1.961939ms)
+▶ lastZero - does not modify input
+  ✔ array is unchanged after call (0.920391ms)
+✔ lastZero - does not modify input (1.010027ms)
+▶ lastZero - throws TypeError for non-arrays
+  ✔ throws TypeError for undefined (0.640664ms)
+  ✔ throws TypeError for null (0.077473ms)
+  ✔ throws TypeError for number 0 (0.06297ms)
+  ✔ throws TypeError for number (0.042761ms)
+  ✔ throws TypeError for string (0.039158ms)
+  ✔ throws TypeError for empty string (0.040214ms)
+  ✔ throws TypeError for boolean (0.047184ms)
+  ✔ throws TypeError for plain object (0.044444ms)
+  ✔ throws TypeError for array-like object (0.044947ms)
+  ✔ throws TypeError for function (0.048714ms)
+  ✔ throws TypeError for Set (0.041159ms)
+  ✔ throws TypeError for typed array (0.039886ms)
+  ✔ throws TypeError when called with no arguments (0.070566ms)
+✔ lastZero - throws TypeError for non-arrays (1.494215ms)
+ℹ tests 31
+ℹ suites 4
+ℹ pass 28
+ℹ fail 3
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 125.974785
+ℹ start of coverage report
+ℹ ----------------------------------------------------------------------------
+ℹ file                      | line % | branch % | funcs % | uncovered lines
+ℹ ----------------------------------------------------------------------------
+ℹ hw1.js                    |  59.14 |   100.00 |   25.00 | 11-24 57-68 79-90
+ℹ test                      |        |          |         | 
+ℹ  promptB_lastZero.test.js | 100.00 |   100.00 |   96.30 | 
+ℹ ----------------------------------------------------------------------------
+ℹ all files                 |  81.55 |   100.00 |   87.10 | 
+ℹ ----------------------------------------------------------------------------
+ℹ end of coverage report
+
+✖ failing tests:
+
+test at test/promptB_lastZero.test.js:22:3
+✖ multiple zeros returns the last one (0.651298ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:
+  
+  0 !== 2
+  
+      at TestContext.<anonymous> (/mnt/c/Users/user.DESKTOP-7QU46KG/Desktop/NYCU/Courses/Fall 2026/Software Testing/Homework/test/promptB_lastZero.test.js:23:12)
+      at Test.runInAsyncScope (node:async_hooks:214:14)
+      at Test.run (node:internal/test_runner/test:1047:25)
+      at Suite.processPendingSubtests (node:internal/test_runner/test:744:18)
+      at Test.postRun (node:internal/test_runner/test:1173:19)
+      at Test.run (node:internal/test_runner/test:1101:12)
+      at async Suite.processPendingSubtests (node:internal/test_runner/test:744:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: 0,
+    expected: 2,
+    operator: 'strictEqual',
+    diff: 'simple'
+  }
+
+test at test/promptB_lastZero.test.js:26:3
+✖ multiple zeros with last at end (0.136307ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:
+  
+  0 !== 2
+  
+      at TestContext.<anonymous> (/mnt/c/Users/user.DESKTOP-7QU46KG/Desktop/NYCU/Courses/Fall 2026/Software Testing/Homework/test/promptB_lastZero.test.js:27:12)
+      at Test.runInAsyncScope (node:async_hooks:214:14)
+      at Test.run (node:internal/test_runner/test:1047:25)
+      at Suite.processPendingSubtests (node:internal/test_runner/test:744:18)
+      at Test.postRun (node:internal/test_runner/test:1173:19)
+      at Test.run (node:internal/test_runner/test:1101:12)
+      at async Suite.processPendingSubtests (node:internal/test_runner/test:744:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: 0,
+    expected: 2,
+    operator: 'strictEqual',
+    diff: 'simple'
+  }
+
+test at test/promptB_lastZero.test.js:30:3
+✖ all zeros (0.105382ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:
+  
+  0 !== 3
+  
+      at TestContext.<anonymous> (/mnt/c/Users/user.DESKTOP-7QU46KG/Desktop/NYCU/Courses/Fall 2026/Software Testing/Homework/test/promptB_lastZero.test.js:31:12)
+      at Test.runInAsyncScope (node:async_hooks:214:14)
+      at Test.run (node:internal/test_runner/test:1047:25)
+      at Suite.processPendingSubtests (node:internal/test_runner/test:744:18)
+      at Test.postRun (node:internal/test_runner/test:1173:19)
+      at Test.run (node:internal/test_runner/test:1101:12)
+      at async Suite.processPendingSubtests (node:internal/test_runner/test:744:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: 0,
+    expected: 3,
+    operator: 'strictEqual',
+    diff: 'simple'
+  }
+(node:170530) MaxListenersExceededWarning: Possible EventEmitter memory leak detected. 11 end listeners added to [TestsStream]. MaxListeners is 10. Use emitter.setMaxListeners() to increase limit
+(Use `node --trace-warnings ...` to show where the warning was created)
