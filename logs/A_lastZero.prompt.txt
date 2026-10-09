@@ -1,0 +1,17 @@
+```js
+function lastZero(x) {
+    if (!Array.isArray(x)) {
+        throw new TypeError('Not an array');
+    }
+    for (let i = 0; i < x.length; i++) {
+        if (x[i] === 0) {
+            return i;
+        }
+    }
+    return -1;
+}
+```
+
+Write unit tests for this function with node:test. Make sure all tests pass.
+
+(Setup: the function is exported from hw1.js in the project root. Save the tests as test/promptA_lastZero.test.js and import the function with `const { lastZero } = require('../hw1.js');`.)

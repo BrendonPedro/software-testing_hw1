@@ -1,0 +1,15 @@
+```js
+/**
+ * Count odd or postive elements
+ *
+ * @param {Object[]} x - The array to search.
+ *
+ * @return {number} Count of odd/positive values in x.
+ * @throws TypeError if x is not an array.
+ */
+function oddOrPos(x)
+```
+
+Write unit tests with node:test that check this specification.
+
+(Setup: the function is exported from hw1.js in the project root. Save the tests as test/promptB_oddOrPos.test.js and import the function with `const { oddOrPos } = require('../hw1.js');`.)

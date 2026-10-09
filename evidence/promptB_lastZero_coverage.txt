@@ -1,0 +1,299 @@
+TAP version 13
+# Subtest: lastZero - returns last index of 0
+    # Subtest: single zero
+    ok 1 - single zero
+      ---
+      duration_ms: 0.5941
+      type: 'test'
+      ...
+    # Subtest: zero at the start only
+    ok 2 - zero at the start only
+      ---
+      duration_ms: 0.0785
+      type: 'test'
+      ...
+    # Subtest: zero in the middle only
+    ok 3 - zero in the middle only
+      ---
+      duration_ms: 0.0611
+      type: 'test'
+      ...
+    # Subtest: zero at the end only
+    ok 4 - zero at the end only
+      ---
+      duration_ms: 0.124
+      type: 'test'
+      ...
+    # Subtest: multiple zeros returns the last one
+    not ok 5 - multiple zeros returns the last one
+      ---
+      duration_ms: 0.6735
+      type: 'test'
+      location: 'C:\\Users\\user.DESKTOP-7QU46KG\\Desktop\\NYCU\\Courses\\Fall 2026\\Software Testing\\Homework\\test\\promptB_lastZero.test.js:22:3'
+      failureType: 'testCodeFailure'
+      error: |-
+        Expected values to be strictly equal:
+        
+        0 !== 2
+        
+      code: 'ERR_ASSERTION'
+      name: 'AssertionError'
+      expected: 2
+      actual: 0
+      operator: 'strictEqual'
+      stack: |-
+        TestContext.<anonymous> (C:\Users\user.DESKTOP-7QU46KG\Desktop\NYCU\Courses\Fall 2026\Software Testing\Homework\test\promptB_lastZero.test.js:23:12)
+        Test.runInAsyncScope (node:async_hooks:214:14)
+        Test.run (node:internal/test_runner/test:1047:25)
+        Suite.processPendingSubtests (node:internal/test_runner/test:744:18)
+        Test.postRun (node:internal/test_runner/test:1173:19)
+        Test.run (node:internal/test_runner/test:1101:12)
+        async Suite.processPendingSubtests (node:internal/test_runner/test:744:7)
+      ...
+    # Subtest: multiple zeros with last at end
+    not ok 6 - multiple zeros with last at end
+      ---
+      duration_ms: 0.1106
+      type: 'test'
+      location: 'C:\\Users\\user.DESKTOP-7QU46KG\\Desktop\\NYCU\\Courses\\Fall 2026\\Software Testing\\Homework\\test\\promptB_lastZero.test.js:26:3'
+      failureType: 'testCodeFailure'
+      error: |-
+        Expected values to be strictly equal:
+        
+        0 !== 2
+        
+      code: 'ERR_ASSERTION'
+      name: 'AssertionError'
+      expected: 2
+      actual: 0
+      operator: 'strictEqual'
+      stack: |-
+        TestContext.<anonymous> (C:\Users\user.DESKTOP-7QU46KG\Desktop\NYCU\Courses\Fall 2026\Software Testing\Homework\test\promptB_lastZero.test.js:27:12)
+        Test.runInAsyncScope (node:async_hooks:214:14)
+        Test.run (node:internal/test_runner/test:1047:25)
+        Suite.processPendingSubtests (node:internal/test_runner/test:744:18)
+        Test.postRun (node:internal/test_runner/test:1173:19)
+        Test.run (node:internal/test_runner/test:1101:12)
+        async Suite.processPendingSubtests (node:internal/test_runner/test:744:7)
+      ...
+    # Subtest: all zeros
+    not ok 7 - all zeros
+      ---
+      duration_ms: 0.1026
+      type: 'test'
+      location: 'C:\\Users\\user.DESKTOP-7QU46KG\\Desktop\\NYCU\\Courses\\Fall 2026\\Software Testing\\Homework\\test\\promptB_lastZero.test.js:30:3'
+      failureType: 'testCodeFailure'
+      error: |-
+        Expected values to be strictly equal:
+        
+        0 !== 3
+        
+      code: 'ERR_ASSERTION'
+      name: 'AssertionError'
+      expected: 3
+      actual: 0
+      operator: 'strictEqual'
+      stack: |-
+        TestContext.<anonymous> (C:\Users\user.DESKTOP-7QU46KG\Desktop\NYCU\Courses\Fall 2026\Software Testing\Homework\test\promptB_lastZero.test.js:31:12)
+        Test.runInAsyncScope (node:async_hooks:214:14)
+        Test.run (node:internal/test_runner/test:1047:25)
+        Suite.processPendingSubtests (node:internal/test_runner/test:744:18)
+        Test.postRun (node:internal/test_runner/test:1173:19)
+        Test.run (node:internal/test_runner/test:1101:12)
+        async Suite.processPendingSubtests (node:internal/test_runner/test:744:7)
+      ...
+    # Subtest: negative numbers around a zero
+    ok 8 - negative numbers around a zero
+      ---
+      duration_ms: 0.0694
+      type: 'test'
+      ...
+    # Subtest: -0 is a zero
+    ok 9 - -0 is a zero
+      ---
+      duration_ms: 0.0676
+      type: 'test'
+      ...
+    # Subtest: mixed types: only numeric 0 counts
+    ok 10 - mixed types: only numeric 0 counts
+      ---
+      duration_ms: 0.056
+      type: 'test'
+      ...
+    # Subtest: large array with zero near the end
+    ok 11 - large array with zero near the end
+      ---
+      duration_ms: 0.624
+      type: 'test'
+      ...
+    1..11
+not ok 1 - lastZero - returns last index of 0
+  ---
+  duration_ms: 4.4137
+  type: 'suite'
+  location: 'C:\\Users\\user.DESKTOP-7QU46KG\\Desktop\\NYCU\\Courses\\Fall 2026\\Software Testing\\Homework\\test\\promptB_lastZero.test.js:5:1'
+  failureType: 'subtestsFailed'
+  error: '3 subtests failed'
+  code: 'ERR_TEST_FAILURE'
+  ...
+# Subtest: lastZero - returns -1 when 0 is absent
+    # Subtest: empty array
+    ok 1 - empty array
+      ---
+      duration_ms: 0.1859
+      type: 'test'
+      ...
+    # Subtest: no zero among numbers
+    ok 2 - no zero among numbers
+      ---
+      duration_ms: 0.0876
+      type: 'test'
+      ...
+    # Subtest: single non-zero element
+    ok 3 - single non-zero element
+      ---
+      duration_ms: 0.0714
+      type: 'test'
+      ...
+    # Subtest: values close to zero are not zero
+    ok 4 - values close to zero are not zero
+      ---
+      duration_ms: 0.2148
+      type: 'test'
+      ...
+    # Subtest: NaN, null, undefined, false are not zero
+    ok 5 - NaN, null, undefined, false are not zero
+      ---
+      duration_ms: 0.1157
+      type: 'test'
+      ...
+    # Subtest: string "0" is not the number 0
+    ok 6 - string "0" is not the number 0
+      ---
+      duration_ms: 0.0892
+      type: 'test'
+      ...
+    1..6
+ok 2 - lastZero - returns -1 when 0 is absent
+  ---
+  duration_ms: 0.9779
+  type: 'suite'
+  ...
+# Subtest: lastZero - does not modify input
+    # Subtest: array is unchanged after call
+    ok 1 - array is unchanged after call
+      ---
+      duration_ms: 1.1419
+      type: 'test'
+      ...
+    1..1
+ok 3 - lastZero - does not modify input
+  ---
+  duration_ms: 1.211
+  type: 'suite'
+  ...
+# Subtest: lastZero - throws TypeError for non-arrays
+    # Subtest: throws TypeError for undefined
+    ok 1 - throws TypeError for undefined
+      ---
+      duration_ms: 0.525
+      type: 'test'
+      ...
+    # Subtest: throws TypeError for null
+    ok 2 - throws TypeError for null
+      ---
+      duration_ms: 0.0526
+      type: 'test'
+      ...
+    # Subtest: throws TypeError for number 0
+    ok 3 - throws TypeError for number 0
+      ---
+      duration_ms: 0.0402
+      type: 'test'
+      ...
+    # Subtest: throws TypeError for number
+    ok 4 - throws TypeError for number
+      ---
+      duration_ms: 0.0358
+      type: 'test'
+      ...
+    # Subtest: throws TypeError for string
+    ok 5 - throws TypeError for string
+      ---
+      duration_ms: 0.0408
+      type: 'test'
+      ...
+    # Subtest: throws TypeError for empty string
+    ok 6 - throws TypeError for empty string
+      ---
+      duration_ms: 0.0329
+      type: 'test'
+      ...
+    # Subtest: throws TypeError for boolean
+    ok 7 - throws TypeError for boolean
+      ---
+      duration_ms: 0.0342
+      type: 'test'
+      ...
+    # Subtest: throws TypeError for plain object
+    ok 8 - throws TypeError for plain object
+      ---
+      duration_ms: 0.0425
+      type: 'test'
+      ...
+    # Subtest: throws TypeError for array-like object
+    ok 9 - throws TypeError for array-like object
+      ---
+      duration_ms: 0.097
+      type: 'test'
+      ...
+    # Subtest: throws TypeError for function
+    ok 10 - throws TypeError for function
+      ---
+      duration_ms: 0.0361
+      type: 'test'
+      ...
+    # Subtest: throws TypeError for Set
+    ok 11 - throws TypeError for Set
+      ---
+      duration_ms: 0.0302
+      type: 'test'
+      ...
+    # Subtest: throws TypeError for typed array
+    ok 12 - throws TypeError for typed array
+      ---
+      duration_ms: 0.0311
+      type: 'test'
+      ...
+    # Subtest: throws TypeError when called with no arguments
+    ok 13 - throws TypeError when called with no arguments
+      ---
+      duration_ms: 0.0877
+      type: 'test'
+      ...
+    1..13
+ok 4 - lastZero - throws TypeError for non-arrays
+  ---
+  duration_ms: 1.3139
+  type: 'suite'
+  ...
+1..4
+# tests 31
+# suites 4
+# pass 28
+# fail 3
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 404.0334
+# start of coverage report
+# ----------------------------------------------------------------------------
+# file                      | line % | branch % | funcs % | uncovered lines
+# ----------------------------------------------------------------------------
+# hw1.js                    |  59.14 |   100.00 |   25.00 | 11-24 57-68 79-90
+# test                      |        |          |         | 
+#  promptB_lastZero.test.js | 100.00 |   100.00 |   96.30 | 
+# ----------------------------------------------------------------------------
+# all files                 |  81.55 |   100.00 |   87.10 | 
+# ----------------------------------------------------------------------------
+# end of coverage report

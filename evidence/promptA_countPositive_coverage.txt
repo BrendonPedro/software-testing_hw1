@@ -1,0 +1,169 @@
+TAP version 13
+# Subtest: countPositive
+    # Subtest: input validation
+        # Subtest: throws TypeError for non-array inputs
+        ok 1 - throws TypeError for non-array inputs
+          ---
+          duration_ms: 1.1656
+          type: 'test'
+          ...
+        # Subtest: throws TypeError when called with no arguments
+        ok 2 - throws TypeError when called with no arguments
+          ---
+          duration_ms: 0.0959
+          type: 'test'
+          ...
+        1..2
+    ok 1 - input validation
+      ---
+      duration_ms: 1.8593
+      type: 'suite'
+      ...
+    # Subtest: counting
+        # Subtest: returns 0 for an empty array
+        ok 1 - returns 0 for an empty array
+          ---
+          duration_ms: 0.3135
+          type: 'test'
+          ...
+        # Subtest: counts all elements when every element is positive
+        ok 2 - counts all elements when every element is positive
+          ---
+          duration_ms: 0.1438
+          type: 'test'
+          ...
+        # Subtest: returns 0 when every element is negative
+        ok 3 - returns 0 when every element is negative
+          ---
+          duration_ms: 0.1256
+          type: 'test'
+          ...
+        # Subtest: counts only non-negative elements in a mixed array
+        ok 4 - counts only non-negative elements in a mixed array
+          ---
+          duration_ms: 0.0989
+          type: 'test'
+          ...
+        # Subtest: counts zero as non-negative (current behavior)
+        ok 5 - counts zero as non-negative (current behavior)
+          ---
+          duration_ms: 0.1021
+          type: 'test'
+          ...
+        # Subtest: counts negative zero, since -0 >= 0
+        ok 6 - counts negative zero, since -0 >= 0
+          ---
+          duration_ms: 0.2271
+          type: 'test'
+          ...
+        # Subtest: handles single-element arrays
+        ok 7 - handles single-element arrays
+          ---
+          duration_ms: 0.1261
+          type: 'test'
+          ...
+        # Subtest: handles fractional values near zero
+        ok 8 - handles fractional values near zero
+          ---
+          duration_ms: 0.0745
+          type: 'test'
+          ...
+        # Subtest: handles Infinity and -Infinity
+        ok 9 - handles Infinity and -Infinity
+          ---
+          duration_ms: 0.0737
+          type: 'test'
+          ...
+        # Subtest: handles large magnitude numbers
+        ok 10 - handles large magnitude numbers
+          ---
+          duration_ms: 0.0929
+          type: 'test'
+          ...
+        # Subtest: does not count NaN
+        ok 11 - does not count NaN
+          ---
+          duration_ms: 0.069
+          type: 'test'
+          ...
+        # Subtest: handles large arrays
+        ok 12 - handles large arrays
+          ---
+          duration_ms: 2.1107
+          type: 'test'
+          ...
+        # Subtest: does not mutate the input array
+        ok 13 - does not mutate the input array
+          ---
+          duration_ms: 0.6651
+          type: 'test'
+          ...
+        1..13
+    ok 2 - counting
+      ---
+      duration_ms: 4.6961
+      type: 'suite'
+      ...
+    # Subtest: non-number elements (JS comparison coercion)
+        # Subtest: coerces numeric strings
+        ok 1 - coerces numeric strings
+          ---
+          duration_ms: 0.227
+          type: 'test'
+          ...
+        # Subtest: treats null as 0 and undefined as NaN
+        ok 2 - treats null as 0 and undefined as NaN
+          ---
+          duration_ms: 0.0856
+          type: 'test'
+          ...
+        # Subtest: treats holes in sparse arrays as undefined
+        ok 3 - treats holes in sparse arrays as undefined
+          ---
+          duration_ms: 0.124
+          type: 'test'
+          ...
+        # Subtest: does not count non-numeric strings or plain objects
+        ok 4 - does not count non-numeric strings or plain objects
+          ---
+          duration_ms: 0.0711
+          type: 'test'
+          ...
+        # Subtest: coerces booleans to 1 and 0
+        ok 5 - coerces booleans to 1 and 0
+          ---
+          duration_ms: 0.1133
+          type: 'test'
+          ...
+        1..5
+    ok 3 - non-number elements (JS comparison coercion)
+      ---
+      duration_ms: 0.7639
+      type: 'suite'
+      ...
+    1..3
+ok 1 - countPositive
+  ---
+  duration_ms: 7.7947
+  type: 'suite'
+  ...
+1..1
+# tests 20
+# suites 4
+# pass 20
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 402.5772
+# start of coverage report
+# ---------------------------------------------------------------------------------
+# file                           | line % | branch % | funcs % | uncovered lines
+# ---------------------------------------------------------------------------------
+# hw1.js                         |  60.22 |   100.00 |   25.00 | 11-24 36-46 79-90
+# test                           |        |          |         | 
+#  promptA_countPositive.test.js | 100.00 |   100.00 |   96.43 | 
+# ---------------------------------------------------------------------------------
+# all files                      |  81.22 |   100.00 |   87.50 | 
+# ---------------------------------------------------------------------------------
+# end of coverage report

@@ -1,0 +1,10 @@
+{
+  "name": "hw1",
+  "private": true,
+  "scripts": {
+    "test": "node --test",
+    "coverage": "node --test --experimental-test-coverage",
+    "prompts": "node scripts/make-prompts.js",
+    "b1": "node scripts/b1-table.js"
+  }
+}

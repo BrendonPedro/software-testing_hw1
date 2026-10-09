@@ -1,0 +1,20 @@
+```js
+function findLast(x, y) {
+    if (!Array.isArray(x)) {
+        throw new TypeError('The first parameter must be an array');
+    }
+    if (typeof y !== 'number') {
+        throw new TypeError('The second parameter must be a number');
+    }
+    for (let i = x.length - 1; i > 0; i--) {
+        if (x[i] === y) {
+            return i;
+        }
+    }
+    return -1;
+}
+```
+
+Write unit tests for this function with node:test. Make sure all tests pass.
+
+(Setup: the function is exported from hw1.js in the project root. Save the tests as test/promptA_findLast.test.js and import the function with `const { findLast } = require('../hw1.js');`.)

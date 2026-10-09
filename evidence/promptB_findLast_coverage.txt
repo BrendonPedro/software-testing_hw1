@@ -1,0 +1,384 @@
+TAP version 13
+# Subtest: findLast
+    # Subtest: returns the last index of y in x
+        # Subtest: finds a value that occurs once
+        ok 1 - finds a value that occurs once
+          ---
+          duration_ms: 0.6377
+          type: 'test'
+          ...
+        # Subtest: returns the last index when the value occurs multiple times
+        ok 2 - returns the last index when the value occurs multiple times
+          ---
+          duration_ms: 0.0874
+          type: 'test'
+          ...
+        # Subtest: returns the last index when every element matches
+        ok 3 - returns the last index when every element matches
+          ---
+          duration_ms: 0.0816
+          type: 'test'
+          ...
+        # Subtest: finds a value at index 0
+        not ok 4 - finds a value at index 0
+          ---
+          duration_ms: 0.7482
+          type: 'test'
+          location: 'C:\\Users\\user.DESKTOP-7QU46KG\\Desktop\\NYCU\\Courses\\Fall 2026\\Software Testing\\Homework\\test\\promptB_findLast.test.js:20:5'
+          failureType: 'testCodeFailure'
+          error: |-
+            Expected values to be strictly equal:
+            
+            -1 !== 0
+            
+          code: 'ERR_ASSERTION'
+          name: 'AssertionError'
+          expected: 0
+          actual: -1
+          operator: 'strictEqual'
+          stack: |-
+            TestContext.<anonymous> (C:\Users\user.DESKTOP-7QU46KG\Desktop\NYCU\Courses\Fall 2026\Software Testing\Homework\test\promptB_findLast.test.js:21:14)
+            Test.runInAsyncScope (node:async_hooks:214:14)
+            Test.run (node:internal/test_runner/test:1047:25)
+            Suite.processPendingSubtests (node:internal/test_runner/test:744:18)
+            Test.postRun (node:internal/test_runner/test:1173:19)
+            Test.run (node:internal/test_runner/test:1101:12)
+            async Suite.processPendingSubtests (node:internal/test_runner/test:744:7)
+          ...
+        # Subtest: finds a value at the final index
+        ok 5 - finds a value at the final index
+          ---
+          duration_ms: 0.0726
+          type: 'test'
+          ...
+        # Subtest: finds the value in a single-element array
+        not ok 6 - finds the value in a single-element array
+          ---
+          duration_ms: 0.1081
+          type: 'test'
+          location: 'C:\\Users\\user.DESKTOP-7QU46KG\\Desktop\\NYCU\\Courses\\Fall 2026\\Software Testing\\Homework\\test\\promptB_findLast.test.js:28:5'
+          failureType: 'testCodeFailure'
+          error: |-
+            Expected values to be strictly equal:
+            
+            -1 !== 0
+            
+          code: 'ERR_ASSERTION'
+          name: 'AssertionError'
+          expected: 0
+          actual: -1
+          operator: 'strictEqual'
+          stack: |-
+            TestContext.<anonymous> (C:\Users\user.DESKTOP-7QU46KG\Desktop\NYCU\Courses\Fall 2026\Software Testing\Homework\test\promptB_findLast.test.js:29:14)
+            Test.runInAsyncScope (node:async_hooks:214:14)
+            Test.run (node:internal/test_runner/test:1047:25)
+            Suite.processPendingSubtests (node:internal/test_runner/test:744:18)
+            Test.postRun (node:internal/test_runner/test:1173:19)
+            Test.run (node:internal/test_runner/test:1101:12)
+            async Suite.processPendingSubtests (node:internal/test_runner/test:744:7)
+          ...
+        # Subtest: finds the last occurrence when it is at the final index
+        ok 7 - finds the last occurrence when it is at the final index
+          ---
+          duration_ms: 0.0784
+          type: 'test'
+          ...
+        # Subtest: handles negative numbers
+        ok 8 - handles negative numbers
+          ---
+          duration_ms: 0.0881
+          type: 'test'
+          ...
+        # Subtest: handles floating-point numbers
+        ok 9 - handles floating-point numbers
+          ---
+          duration_ms: 0.0726
+          type: 'test'
+          ...
+        # Subtest: handles zero
+        ok 10 - handles zero
+          ---
+          duration_ms: 0.7201
+          type: 'test'
+          ...
+        # Subtest: handles Infinity and -Infinity
+        ok 11 - handles Infinity and -Infinity
+          ---
+          duration_ms: 0.1041
+          type: 'test'
+          ...
+        # Subtest: finds a number in an array containing non-number elements
+        ok 12 - finds a number in an array containing non-number elements
+          ---
+          duration_ms: 0.0846
+          type: 'test'
+          ...
+        # Subtest: works on a large array
+        ok 13 - works on a large array
+          ---
+          duration_ms: 1.2084
+          type: 'test'
+          ...
+        1..13
+    not ok 1 - returns the last index of y in x
+      ---
+      duration_ms: 5.107
+      type: 'suite'
+      location: 'C:\\Users\\user.DESKTOP-7QU46KG\\Desktop\\NYCU\\Courses\\Fall 2026\\Software Testing\\Homework\\test\\promptB_findLast.test.js:7:3'
+      failureType: 'subtestsFailed'
+      error: '2 subtests failed'
+      code: 'ERR_TEST_FAILURE'
+      stack: |-
+        async Promise.all (index 0)
+      ...
+    # Subtest: returns -1 when y is absent
+        # Subtest: returns -1 for an empty array
+        ok 1 - returns -1 for an empty array
+          ---
+          duration_ms: 0.2314
+          type: 'test'
+          ...
+        # Subtest: returns -1 when the value is not in the array
+        ok 2 - returns -1 when the value is not in the array
+          ---
+          duration_ms: 0.0985
+          type: 'test'
+          ...
+        # Subtest: returns -1 for a single-element array without the value
+        ok 3 - returns -1 for a single-element array without the value
+          ---
+          duration_ms: 0.0881
+          type: 'test'
+          ...
+        # Subtest: does not match a string that looks like the number
+        ok 4 - does not match a string that looks like the number
+          ---
+          duration_ms: 0.2185
+          type: 'test'
+          ...
+        # Subtest: does not match other loosely-equal values
+        ok 5 - does not match other loosely-equal values
+          ---
+          duration_ms: 0.3993
+          type: 'test'
+          ...
+        # Subtest: does not match a nearby floating-point value
+        ok 6 - does not match a nearby floating-point value
+          ---
+          duration_ms: 0.1838
+          type: 'test'
+          ...
+        1..6
+    ok 2 - returns -1 when y is absent
+      ---
+      duration_ms: 1.454
+      type: 'suite'
+      ...
+    # Subtest: does not modify its input
+        # Subtest: leaves the array unchanged
+        ok 1 - leaves the array unchanged
+          ---
+          duration_ms: 1.426
+          type: 'test'
+          ...
+        1..1
+    ok 3 - does not modify its input
+      ---
+      duration_ms: 1.5258
+      type: 'suite'
+      ...
+    # Subtest: throws TypeError if x is not an array
+        # Subtest: throws when x is undefined
+        ok 1 - throws when x is undefined
+          ---
+          duration_ms: 0.4549
+          type: 'test'
+          ...
+        # Subtest: throws when x is null
+        ok 2 - throws when x is null
+          ---
+          duration_ms: 0.0816
+          type: 'test'
+          ...
+        # Subtest: throws when x is a number
+        ok 3 - throws when x is a number
+          ---
+          duration_ms: 0.0694
+          type: 'test'
+          ...
+        # Subtest: throws when x is a string
+        ok 4 - throws when x is a string
+          ---
+          duration_ms: 0.0674
+          type: 'test'
+          ...
+        # Subtest: throws when x is a boolean
+        ok 5 - throws when x is a boolean
+          ---
+          duration_ms: 0.0753
+          type: 'test'
+          ...
+        # Subtest: throws when x is a plain object
+        ok 6 - throws when x is a plain object
+          ---
+          duration_ms: 0.1722
+          type: 'test'
+          ...
+        # Subtest: throws when x is a function
+        ok 7 - throws when x is a function
+          ---
+          duration_ms: 0.3424
+          type: 'test'
+          ...
+        # Subtest: throws when x is a Set
+        ok 8 - throws when x is a Set
+          ---
+          duration_ms: 0.1321
+          type: 'test'
+          ...
+        # Subtest: throws when x is a symbol
+        ok 9 - throws when x is a symbol
+          ---
+          duration_ms: 0.2067
+          type: 'test'
+          ...
+        # Subtest: throws when x is a bigint
+        ok 10 - throws when x is a bigint
+          ---
+          duration_ms: 0.0791
+          type: 'test'
+          ...
+        # Subtest: throws when called with no arguments
+        ok 11 - throws when called with no arguments
+          ---
+          duration_ms: 0.1373
+          type: 'test'
+          ...
+        1..11
+    ok 4 - throws TypeError if x is not an array
+      ---
+      duration_ms: 2.2263
+      type: 'suite'
+      ...
+    # Subtest: throws TypeError if y is not a number
+        # Subtest: throws when y is undefined
+        ok 1 - throws when y is undefined
+          ---
+          duration_ms: 0.1913
+          type: 'test'
+          ...
+        # Subtest: throws when y is null
+        ok 2 - throws when y is null
+          ---
+          duration_ms: 0.0504
+          type: 'test'
+          ...
+        # Subtest: throws when y is a numeric string
+        ok 3 - throws when y is a numeric string
+          ---
+          duration_ms: 0.1204
+          type: 'test'
+          ...
+        # Subtest: throws when y is a boolean
+        ok 4 - throws when y is a boolean
+          ---
+          duration_ms: 0.0591
+          type: 'test'
+          ...
+        # Subtest: throws when y is an object
+        ok 5 - throws when y is an object
+          ---
+          duration_ms: 0.0481
+          type: 'test'
+          ...
+        # Subtest: throws when y is an array
+        ok 6 - throws when y is an array
+          ---
+          duration_ms: 0.0659
+          type: 'test'
+          ...
+        # Subtest: throws when y is a bigint
+        ok 7 - throws when y is a bigint
+          ---
+          duration_ms: 0.0644
+          type: 'test'
+          ...
+        # Subtest: throws when y is a symbol
+        ok 8 - throws when y is a symbol
+          ---
+          duration_ms: 0.1162
+          type: 'test'
+          ...
+        # Subtest: throws when y is a function
+        ok 9 - throws when y is a function
+          ---
+          duration_ms: 0.0784
+          type: 'test'
+          ...
+        # Subtest: throws when y is not a number even if x is empty
+        ok 10 - throws when y is not a number even if x is empty
+          ---
+          duration_ms: 0.1412
+          type: 'test'
+          ...
+        # Subtest: throws when y is omitted
+        ok 11 - throws when y is omitted
+          ---
+          duration_ms: 0.1085
+          type: 'test'
+          ...
+        # Subtest: does not throw when y is NaN, since NaN is a number
+        ok 12 - does not throw when y is NaN, since NaN is a number
+          ---
+          duration_ms: 0.1652
+          type: 'test'
+          ...
+        1..12
+    ok 5 - throws TypeError if y is not a number
+      ---
+      duration_ms: 2.3714
+      type: 'suite'
+      ...
+    # Subtest: throws TypeError when both arguments are invalid
+        # Subtest: throws when x is not an array and y is not a number
+        ok 1 - throws when x is not an array and y is not a number
+          ---
+          duration_ms: 0.2197
+          type: 'test'
+          ...
+        1..1
+    ok 6 - throws TypeError when both arguments are invalid
+      ---
+      duration_ms: 0.2901
+      type: 'suite'
+      ...
+    1..6
+not ok 1 - findLast
+  ---
+  duration_ms: 13.5755
+  type: 'suite'
+  location: 'C:\\Users\\user.DESKTOP-7QU46KG\\Desktop\\NYCU\\Courses\\Fall 2026\\Software Testing\\Homework\\test\\promptB_findLast.test.js:6:1'
+  failureType: 'subtestsFailed'
+  error: '1 subtest failed'
+  code: 'ERR_TEST_FAILURE'
+  ...
+1..1
+# tests 44
+# suites 7
+# pass 42
+# fail 2
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 407.058
+# start of coverage report
+# ----------------------------------------------------------------------------
+# file                      | line % | branch % | funcs % | uncovered lines
+# ----------------------------------------------------------------------------
+# hw1.js                    |  62.37 |   100.00 |   25.00 | 36-46 57-68 79-90
+# test                      |        |          |         | 
+#  promptB_findLast.test.js | 100.00 |   100.00 |   95.45 | 
+# ----------------------------------------------------------------------------
+# all files                 |  86.22 |   100.00 |   89.58 | 
+# ----------------------------------------------------------------------------
+# end of coverage report

@@ -1,0 +1,18 @@
+```js
+function oddOrPos(x) {
+    if (!Array.isArray(x)) {
+        throw new TypeError('Not an array');
+    }
+    let count = 0;
+    for (let i = 0; i < x.length; i++) {
+        if (x[i] % 2 === 1 || x[i] > 0) {
+            count++;
+        }
+    }
+    return count;
+}
+```
+
+Write unit tests for this function with node:test. Make sure all tests pass.
+
+(Setup: the function is exported from hw1.js in the project root. Save the tests as test/promptA_oddOrPos.test.js and import the function with `const { oddOrPos } = require('../hw1.js');`.)
