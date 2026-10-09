@@ -1,6 +1,8 @@
 # Homework 1 - Software Testing
 
-Name / Student ID: 314540048
+Name: Brendon Pedro
+
+Student ID: 314540048
 
 ## Part A (done without AI)
 

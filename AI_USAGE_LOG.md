@@ -550,7 +550,7 @@ Prompts and agent text verbatim; tool calls summarized, tool results left out. R
 - Tool: Claude Code 2.1.295
 - Model: claude-opus-5-5
 - Session: f9316174-d936-41ff-9597-0d520f28c38c
-- Time: 2026-10-09 13:36 (UTC+8) to 17:18 (UTC+8)
+- Time: 2026-10-09 13:36 (UTC+8) to 18:28 (UTC+8)
 - Working directory: /mnt/c/Users/user.DESKTOP-7QU46KG/Desktop/NYCU/Courses/Fall 2026/Software Testing/Homework
 
 **Prompt 1 (verbatim):**
@@ -1495,6 +1495,121 @@ Pages read well now. Next I'm scanning all 95 pages for blank or near-empty ones
 
 - Bash: Find the smallest rendered pages
 - Bash: Final regeneration and structure checks
+
+**Agent:**
+
+````text
+The final document has one title per part, the stale sentence is gone, there are no em dashes in my text, and there's no e-mail address anywhere. Next I'm creating the submission ZIP.
+````
+
+*Tool calls (summarized; tool results omitted):*
+
+- Bash: Create submission ZIP and verify its contents
+- Bash: Confirm remote and stage final deliverables
+
+**Agent:**
+
+````text
+Only the deliverables are staged. The line-ending-only changes to your `mine_*` files stay unstaged. Next I'm committing and pushing.
+````
+
+*Tool calls (summarized; tool results omitted):*
+
+- Bash: Commit deliverables and push to origin main
+- Bash: Remove temporary page renders
+
+**Agent:**
+
+````text
+Everything is finished and pushed: the final PDF passed inspection, the ZIP has every required file, and the commit is on GitHub. Before you submit, please check the Part A changes I made to the report, listed under "Updated" below.
+
+**1. Files created or updated**
+- **Created:**
+  - `HOMEWORK1_FINAL.md` and `HOMEWORK1_FINAL.pdf`: the report plus the full AI usage log as an appendix.
+  - `HOMEWORK1_SUBMISSION.zip`.
+  - `coverage/`: the function-only coverage output.
+  - `scripts/render-transcript.js`: turns stored Claude Code sessions into transcripts.
+  - `scripts/build-final.js`: rebuilds the combined Markdown and the PDF.
+- **Updated `REPORT.md`:**
+  - **Part A:** I made it match your Part A PDF. `findLast` (b) is back to `"hello"` and `oddOrPos` (c) is back to `[1, 2, -2]`. For `lastZero` (b) and (c), the report now shows your original answers (`[]`, `[0, 1, 2]`) and labels `null` and `[0]` as changes made after reviewing Claude in B3.
+  - **B1:** I removed the leftover note and switched the table to the function-only coverage figures.
+- **Updated `AI_USAGE_LOG.md`:** I rebuilt it without deleting any original record.
+  - **Header:** it now gives the right versions: 2.1.283 on Windows for the official runs, 2.1.295 on WSL for setup and the interactive sessions.
+  - **Session index:** I added one covering all 14 sessions.
+  - **Isolation:** it now states the limits honestly. Your global `AGENTS.md` loaded in every Windows run. One `A_lastZero` run (T6) was interrupted and then repeated as T8. The official `A_lastZero` agent fixed its own sandbox copy of the function.
+  - **findLast run:** the first interactive `findLast` run is now marked as preliminary, and the three outdated claims about its files are marked "Corrected".
+  - **B3:** both runs are kept (T13 evaluated, T14 an accidental repeat). Their text matches the stored session files exactly.
+
+**2. B1 coverage:** verified. All 16 figures are 100%, measured over the lines of the function under test only, with `scripts/b1-table.js`. I checked two of them by hand against the raw coverage files, and the report now says they are function-only. Test and failure counts match the saved suites and `evidence/`. All eight suites are byte-identical to what the agents left in their sandboxes.
+
+**3. AI usage appendix:** complete, with every prompt verbatim and every agent response in full. There are two deliberate limits, and the log states both:
+- **Tool details:** for the setup session (T1) and this session (T3), tool calls are summarized one per line and tool results are left out, because those records also contain account details and the repo is public.
+- **T3 cutoff:** T3 ends before the commit and push.
+
+**4. PDF:** 95 pages, and formatting passed inspection. I rendered every page with Windows' built-in PDF engine and checked them: both tables display correctly, code wraps rather than getting cut off, and there are no blank pages. Page 5 holds only the Bonus heading, because the appendix starts on a new page. No installation was needed: GitHub's renderer did the Markdown and your installed Chrome printed the PDF. When I first checked Chrome, it may have opened an empty Chrome window, which you can close.
+
+**5. ZIP:** complete, 107 files:
+- the PDF, `hw1.js` (identical to the committed original) and `package.json`
+- the 8 agent suites and your 5 own test files
+- `evidence/` and `coverage/`
+- the log, plus `logs/`, `prompts/` and `scripts/`
+- your Part A answers PDF
+
+It contains no `.git`, temp files, `.docx` or handout. Running `node --test` inside it gives 210 tests and 22 failures, as expected.
+
+**6. GitHub:** the push succeeded. Commit `30e5244` is on `origin/main` at `BrendonPedro/software-testing_hw1`. I left the line-ending-only changes to your `mine_*` files unstaged. I pushed straight to `origin/main` because you asked to; your `AGENTS.md` normally routes pushes through `no-mistakes`.
+
+**7. Before you submit:**
+- **Name:** the report says "Name / Student ID: 314540048" with no name.
+- **Part A edits:** check the changes listed under "Updated" above. Also, `lastZero` (a) gives the exact backward-loop fix, which your PDF doesn't state in words.
+- **Other AI tools:** I can only see Claude Code sessions. If you used another AI tool for the report text, the Part A scripts or B4, add it to the log.
+- **B2 Reveal row:** it uses the echoed `countPositive([0])` assertion. The handout's Reveal example is an assertion that doesn't check the wrong value at all, and it handles the echoed case separately in B2(b). You may want a different example there.
+- **Leftover file:** `~WRL1392.tmp`, a Word temp file, is still tracked in git. I didn't touch it.
+- **Upload:** submit `HOMEWORK1_FINAL.pdf` and `HOMEWORK1_SUBMISSION.zip` (or the repo link) on the course website.
+````
+
+**Prompt 7 (verbatim):**
+
+````text
+Please perform the final submission update for Homework 1.
+
+I have reviewed the report and want to finalize it.
+
+1. Confirm my name and student ID are present in REPORT.md.
+2. Preserve the original independent Part A answers and clearly label later changes resulting from Claude's B3 analysis.
+3. Keep the existing B1 and B2 tables accurate. If a hand-written Reveal test was added, make sure it is clearly identified.
+4. Remove the tracked temporary file `~WRL1392.tmp` and add an appropriate .gitignore rule.
+5. Rebuild HOMEWORK1_FINAL.md and HOMEWORK1_FINAL.pdf using the existing build script.
+6. Rebuild HOMEWORK1_SUBMISSION.zip with the updated report, PDF, code, tests, coverage and full AI usage appendix.
+7. Check that the PDF opens correctly, both tables render properly, and the appendix is complete.
+8. Make sure the ZIP includes the same final PDF that I will upload separately.
+9. Commit and push only the intended final changes to origin/main. Do not modify hw1.js or any original agent-generated tests.
+
+Report the final PDF page count, ZIP file count, commit ID and whether the push succeeded.
+````
+
+**Agent:**
+
+````text
+I'll start by checking what changed since the last commit, including your edits to the report.
+````
+
+*Tool calls (summarized; tool results omitted):*
+
+- Bash: Show git state and report changes since last commit
+- Bash: Check Part A scripts for the original fixes
+- Bash: Fix name lines, add gitignore, untrack temp file
+
+**Agent:**
+
+````text
+Next I'm re-checking the B1 and B2 tables against fresh test runs.
+````
+
+*Tool calls (summarized; tool results omitted):*
+
+- Bash: Re-verify B1 counts and B2 assertions
+- Bash: Refresh log transcript, rebuild final PDF, render pages
 
 ### T4 - B1 Prompt A - findLast
 

@@ -1,0 +1,9 @@
+# Office temporary and lock files (e.g. ~WRL1392.tmp, ~$document.docx)
+~*.tmp
+~$*
+
+# Leftovers if scripts/build-final.js is interrupted
+.chrome-profile-*/
+HOMEWORK1_FINAL.html
+
+node_modules/
